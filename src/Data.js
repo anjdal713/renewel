@@ -86,7 +86,7 @@ const postList = [
         "title": "열번째 게시글입니다.",
         "type": "공지사항",
         "content": `안녕하세요~
-        
+
         컴퓨터공학부 행정조교입니다.
         
         
@@ -94,6 +94,114 @@ const postList = [
         
         제출된 내용은 10월 마지막주부터 스마트 자기관리 시스템에서 확인 가능합니다.`,
         "createDate": "2023-07-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 11,
+        "title": "열한번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "열한번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 12,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 13,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 14,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 15,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 16,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 17,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 18,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 19,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 20,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 21,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
+        "person": "행정조교",
+        "readCount": 4
+    },
+    {
+        "no": 22,
+        "title": "아홉번째 게시글입니다.",
+        "type": "공지사항",
+        "content": "아홉번째 게시글 내용입니다.",
+        "createDate": "2023-05-01",
         "person": "행정조교",
         "readCount": 4
     },

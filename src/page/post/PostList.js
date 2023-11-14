@@ -4,17 +4,32 @@ import CommonTable from '../../component/table/CommonTable';
 import CommonTableColumn from '../../component/table/CommonTableColumn';
 import CommonTableRow from '../../component/table/CommonTableRow';
 import { postList } from '../../Data';
+import Pagination from 'react-js-pagination';
+import './Paging.css'
+
 
 const PostList = props => {
     const [ dataList, setDataList ] = useState([]);
+    const [currentPosts, setCurrentPosts] = useState([]);
+    const [page, setPage] = useState(1);
+    const handlePageChange = (page) => {
+        setPage(page);
+    };
+    const [postPerPage] = useState(10);
+    const indexOfLastPost = page*postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
 
     useEffect(() => {
         setDataList(postList);
     }, [])
 
+    useEffect(() => {
+        setCurrentPosts(dataList.slice(indexOfFirstPost, indexOfLastPost))
+    }, [indexOfFirstPost, indexOfLastPost, page, dataList])
+
     const handleTitleClick = (item) => {
         // 클릭 시 readCount 증가
-        const updatedList = dataList.map((post) => {
+        const updatedList = currentPosts.map((post) => {
             if (post.no === item.no) {
                 return { ...post, readCount: post.readCount + 1 };
             }
@@ -28,7 +43,7 @@ const PostList = props => {
         <>
         <CommonTable headersName={['글번호', '구분', '제목', '작성자', '등록일자', '조회수']}>
         {
-            dataList ? dataList.map((item, index) => {
+            currentPosts ? currentPosts.map((item, index) => {
                 return (
                     <CommonTableRow key={index}>
                     <CommonTableColumn>{ item.no }</CommonTableColumn>
@@ -57,6 +72,15 @@ const PostList = props => {
             }) : ''
         }
         </CommonTable>
+        <Pagination
+            activePage={page}
+            itemsCountPerPage={10}
+            totalItemsCount={dataList.length}
+            pageRangeDisplayed={5}
+            prevPageText={"‹"}
+            nextPageText={"›"}
+            onChange={handlePageChange}
+        />
         </>
     )
 }
