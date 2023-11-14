@@ -7,7 +7,7 @@
 }
 
 .common-table-header-column {
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 3px solid #e8e8e8;
     padding: 0;
     font-size: 16px;
     padding: 10px 5px;
@@ -15,7 +15,7 @@
 }
 
 .common-table-row:hover {
-    background-color: #eceaea;
+    background-color: rgb(238, 238, 238);
     cursor: pointer;
 }
 

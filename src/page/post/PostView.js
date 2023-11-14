@@ -60,7 +60,7 @@ const PostView = () => {
             <div className="error-message">해당 게시글을 찾을 수 없습니다.</div>
         )}
         
-        <button className="post-view-go-list-btn" onClick={() => navigate(-1)}>목록으로 돌아가기</button>
+        <button className="post-view-go-list-btn" onClick={() => navigate(-1)}>목록</button>
         </div>
     </>
     )
