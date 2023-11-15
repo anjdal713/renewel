@@ -9,6 +9,7 @@ import './Paging.css'
 import CustomDatePicker from "./DatePicker";
 import { FaSearch } from "react-icons/fa";
 import { GrPowerReset } from "react-icons/gr";
+import './textInput.css';
 
 const PostList = props => {
     const [ dataList, setDataList ] = useState([]);
@@ -18,6 +19,7 @@ const PostList = props => {
     const [endDate, setEndDate] = useState(new Date());
     const [postPerPage] = useState(10);
     const [tempList, setTempList] = useState([]);
+    const [inputValue, setInputValue] = useState('');
 
     const indexOfLastPost = page*postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
@@ -65,14 +67,30 @@ const PostList = props => {
 
     const handleReturnClick = () => {
         setDataList(tempList);
+        setInputValue('');
     };
 
+    const handleTextInputSearch = () => {
+        const filteredData = tempList.filter((item) => {
+            return item.title.includes(inputValue);
+        })
+        setDataList(filteredData);
+    };
+
+    const handleTextInput = (e) => {
+        setInputValue(e.target.value);
+    };
     return (
         <>
+        <div className = "input-bar">
+            <input type="text" className="text-input" placeholder="내용을 입력해주세요." value={inputValue} onChange={handleTextInput}/>
+            <button className="text-button" onClick={handleTextInputSearch}>검색</button>
+        </div>
         <div className="search-bar">
             <CustomDatePicker selectedDate={startDate} setSelectedDate={setStartDate} />
             <span className="date-separator"><b>~</b></span>
             <CustomDatePicker selectedDate={endDate} setSelectedDate={setEndDate} />
+
             <button className="button" disabled={startDate > endDate} onClick={handleSearchClick}>
             <FaSearch className="icon" />
             </button>
