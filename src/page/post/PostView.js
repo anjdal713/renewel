@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router';
 import { getPostByNo } from '../../Data';
 import './Post.css';
 
+
 const PostView = () => {
     const [ data, setData ] = useState(null);
     const navigate = useNavigate();
@@ -25,44 +26,34 @@ const PostView = () => {
 
     return (
         <>
-        <h2 align="center">게시글 상세정보</h2>
-
+        <h1 align="center">학사공지</h1>
+        <br/>
+        <hr class="custom-hr"/>
+        <br/>
         <div className="post-view-wrapper">
         {
             data ? (
             <>
-                <div className="post-view-row">
-                    <label>게시글 번호</label>
-                    <label>{ data.no }</label>
+                <br/>
+                <div className="post-view-head">
+                <hr/><br/>
+                <label class="title-label"><b>{data.title}</b></label><br/><br/>
+                <label class="label2">작성자:  {data.person} ,      작성일:  {data.createDate}</label>
+                <hr/>
                 </div>
-                <div className="post-view-row">
-                    <label>제목</label>
-                    <label>{ data.title }</label>
-                </div>
-                <div className="post-view-row">
-                    <label>작성일</label>
-                    <label>{ data.createDate }</label>
-                </div>
-                <div className="post-view-row">
-                    <label>조회수</label>
-                    <label>{ data.readCount }</label>
-                </div>
-                <div className="post-view-row">
-                    <label>내용</label>
-                    <div>
-                    {
-                        data.content
-                    }
-                    </div>
+                <div className="post-view-body">
+                    <p class="p1"><pre>{data.content}</pre></p>
+                    <br/><br/>
+                    <hr/><br/>
                 </div>
             </>
             ) : (
             <div className="error-message">해당 게시글을 찾을 수 없습니다.</div>
         )}
         
-        <button className="post-view-go-list-btn" onClick={() => navigate(-1)}>목록</button>
+        <button className="post-view-go-list-btn" onClick={() => navigate(-1)}>게시글 목록</button>
         </div>
-    </>
+        </>
     )
 }
 

@@ -1,0 +1,49 @@
+.search-button {
+    width: 55px;
+    padding: 7px;
+    background-color: rgb(250, 249, 249);
+    border-radius: 10px;
+    margin-left: 8px;
+    border-width: 1px;
+}
+.search-icon{
+    padding-top: 4px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.date-separator {
+    margin: 0 8px; /* 원하는 간격을 조절하세요 */
+}
+.datepicker-input {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    width: 160px;
+    padding: 7px;
+    border-radius: 7px;
+    border-width: 1px;
+    align-items: center;
+}
+.calendar-icon {
+    margin-left: 11px; /* 아이콘과 버튼 사이의 간격 조절 */
+    margin-top: 3px;
+    color: black;
+}
+.react-datepicker__header {
+    background-color: rgb(176, 224, 230);
+}
+.react-datepicker__day--outside-month {
+    color: #a8a8a8 !important;
+    pointer-events: none;
+}
+.react-datepicker__day-name {
+    width: 28px;
+    color: #fff;
+}

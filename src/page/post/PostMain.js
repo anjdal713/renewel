@@ -1,10 +1,14 @@
 import React from 'react';
 import PostList from './PostList';
+import './Post.css'
 
 const PostMain = props => {
     return (
         <>
-        <h2 align="center">컴퓨터공학부 공지사항</h2>
+        <h1 align="center">학사공지</h1>
+        <br/>
+        <hr class="custom-hr"/>
+        <br/>
         <PostList />
         </>
     )
