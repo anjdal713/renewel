@@ -8,6 +8,7 @@ import Pagination from 'react-js-pagination';
 import './Paging.css'
 import CustomDatePicker from "./DatePicker";
 import { FaSearch } from "react-icons/fa";
+import { GrPowerReset } from "react-icons/gr";
 
 const PostList = props => {
     const [ dataList, setDataList ] = useState([]);
@@ -16,25 +17,29 @@ const PostList = props => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [postPerPage] = useState(10);
-    
+    const [tempList, setTempList] = useState([]);
+
     const indexOfLastPost = page*postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
 
     useEffect(() => {
         setDataList(postList);
-    }, [])
+        setTempList(postList);
+    }, [tempList])
 
     useEffect(() => {
         setCurrentPosts(dataList.slice(indexOfFirstPost, indexOfLastPost));
     }, [indexOfFirstPost, indexOfLastPost, page, dataList])
+
+    const dateToString = (date) => {
+        return date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getDate().toString().padStart(2, '0')
+    }
 
     const handlePageChange = (page) => {
         setPage(page);
     };
 
     const handleTitleClick = (item) => {
-        // 클릭 시 readCount 증가
-        
         const updatedList = currentPosts.map((post) => {    
             if (post.no === item.no) {
                 if(localStorage.getItem(item.no) != null){
@@ -51,20 +56,15 @@ const PostList = props => {
         setDataList(updatedList);
     };
 
-    const dateToString = (date) => {
-        return date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getDate().toString().padStart(2, '0')
-    }
-
     const handleSearchClick = () => {
-        // 검색 버튼 클릭 시 실행되는 코드
-        console.log('startDate:', dateToString(startDate));
-        console.log('endDate:', dateToString(endDate));
-        
-        // 이후 추가로 필요한 작업을 수행할 수 있습니다.
         const filteredData = dataList.filter((item) => {
             return item.createDate >= dateToString(startDate) && item.createDate <= dateToString(endDate);
         });
-        setCurrentPosts(filteredData);
+        setDataList(filteredData);
+    };
+
+    const handleReturnClick = () => {
+        setDataList(tempList);
     };
 
     return (
@@ -73,8 +73,11 @@ const PostList = props => {
             <CustomDatePicker selectedDate={startDate} setSelectedDate={setStartDate} />
             <span className="date-separator"><b>~</b></span>
             <CustomDatePicker selectedDate={endDate} setSelectedDate={setEndDate} />
-            <button className="search-button" disabled={startDate > endDate} onClick={handleSearchClick}>
-            <FaSearch className="search-icon" />
+            <button className="button" disabled={startDate > endDate} onClick={handleSearchClick}>
+            <FaSearch className="icon" />
+            </button>
+            <button className="button" onClick={handleReturnClick}>
+            <GrPowerReset className="icon"/>
             </button>
         </div>
         <CommonTable headersName={['글번호', '구분', '제목', '작성자', '등록일자', '조회수']}>
@@ -94,9 +97,8 @@ const PostList = props => {
                     style={{
                         textDecoration: 'none',
                         color: '#408FFF',
-                        //color: 'blue',
-                        borderBottom: '1.5px solid transparent', // 초기에는 투명한 밑줄
-                        transition: 'border-color 0.3s', // 부드러운 효과를 위한 트랜지션
+                        borderBottom: '1.5px solid transparent', 
+                        transition: 'border-color 0.3s',
                     }}
                     onMouseOver={(e) => (e.target.style.borderBottom = '1.5px solid black')}
                     onMouseOut={(e) => (e.target.style.borderBottom = '1.5px solid transparent')}
