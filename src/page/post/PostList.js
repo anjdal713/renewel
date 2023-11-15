@@ -10,6 +10,8 @@ import CustomDatePicker from "./DatePicker";
 import { FaSearch } from "react-icons/fa";
 import { GrPowerReset } from "react-icons/gr";
 import './textInput.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PostList = props => {
     const [ dataList, setDataList ] = useState([]);
@@ -23,6 +25,10 @@ const PostList = props => {
 
     const indexOfLastPost = page*postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
+
+    useEffect(() => {
+        AOS.init();
+    })
 
     useEffect(() => {
         setDataList(postList);
@@ -82,7 +88,10 @@ const PostList = props => {
     };
     return (
         <>
+        <div data-aos="fade-up"
+            data-aos-duration="1500">
         <div className = "input-bar">
+
             <input type="text" className="text-input" placeholder="내용을 입력해주세요." value={inputValue} onChange={handleTextInput}/>
             <button className="text-button" onClick={handleTextInputSearch}>검색</button>
         </div>
@@ -132,6 +141,7 @@ const PostList = props => {
             }) : ''
         }
         </CommonTable>
+        </div>
         <br/><br/>
         <Pagination
             activePage={page}

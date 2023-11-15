@@ -2,9 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { getPostByNo } from '../../Data';
 import './Post.css';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const PostView = () => {
+    useEffect(() => {
+        AOS.init();
+    })
+
     const [ data, setData ] = useState(null);
     const navigate = useNavigate();
     const {no} = useParams();
@@ -30,7 +35,9 @@ const PostView = () => {
         <br/>
         <hr class="custom-hr"/>
         <br/>
-        <div className="post-view-wrapper">
+        <div data-aos="fade-up"
+            data-aos-duration="1500"
+            className="post-view-wrapper">
         {
             data ? (
             <>
