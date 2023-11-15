@@ -32,3 +32,11 @@
 .custom-hr{
     opacity: 0.3;
 }
+.hr-top{
+    height: 2px; /* 선의 두께를 조절 */
+    background-color: black;
+    border: none;
+}
+.custom-hr2{
+    opacity: 0.5;
+}

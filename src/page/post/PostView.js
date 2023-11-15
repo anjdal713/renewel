@@ -36,10 +36,10 @@ const PostView = () => {
             <>
                 <br/>
                 <div className="post-view-head">
-                <hr/><br/>
+                <hr className="hr-top"/><br/>
                 <label class="title-label"><b>{data.title}</b></label><br/><br/>
                 <label class="label2">작성자:  {data.person} ,      작성일:  {data.createDate}</label>
-                <hr/>
+                <hr className="custom-hr2"/>
                 </div>
                 <div className="post-view-body">
                     <p class="p1"><pre>{data.content}</pre></p>
