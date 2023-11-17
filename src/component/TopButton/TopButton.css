@@ -1,0 +1,13 @@
+.topBtn_wrap {
+    position: sticky;
+    bottom: 30px;
+    float: right;
+}
+.topBtn {
+    font-size: 3.5rem;
+    color: skyblue !important;
+    border: none;
+    background: none; 
+    padding: 0;
+    cursor: pointer;
+}

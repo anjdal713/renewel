@@ -65,7 +65,7 @@ const PostList = props => {
     };
 
     const handleSearchClick = () => {
-        const filteredData = dataList.filter((item) => {
+        const filteredData = tempList.filter((item) => {
             return item.createDate >= dateToString(startDate) && item.createDate <= dateToString(endDate);
         });
         setDataList(filteredData);
@@ -152,6 +152,7 @@ const PostList = props => {
             nextPageText={"›"}
             onChange={handlePageChange}
         />
+        <br/><br/>
         </>
     )
 }

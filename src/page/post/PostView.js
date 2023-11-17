@@ -31,6 +31,7 @@ const PostView = () => {
 
     return (
         <>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <h1 align="center">학사공지</h1>
         <br/>
         <hr class="custom-hr"/>
