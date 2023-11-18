@@ -30,6 +30,7 @@
 
 .scrolled {
     background-color: white;
+    border-bottom: 2px solid #e8e8e8;
 }
 /* .scrolled .header-logo {
     filter: invert(100%) sepia(0%) saturate(10000%) hue-rotate(180deg);

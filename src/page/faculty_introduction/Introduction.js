@@ -4,9 +4,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Map from './Map';
 import TopButton from '../../component/TopButton/TopButton';
-import man from '../../img/man.jpg';
-import Header from '../../component/Header/Header';
+import man from '../../img/man.png';
 import head from '../../img/head.jpg';
+import future from '../../img/future.png';
+import computer2 from '../../img/computer2.jpg';
 
 const Introduction = () =>{
     useEffect(() => {
@@ -26,27 +27,26 @@ const Introduction = () =>{
                 <hr class="custom-hr"/>
                 <br/>
         </div>
-        
+        <br/>
         <div class="container">
             <div class="container_1">
                 <div class="left"
                     data-aos="fade-right"
                     data-aos-duration="1500"> 
                     <h2>학부장 인사말</h2>
-                    <img className="manImage" alt="Dean of Faculty" src="img/man.jpg"/>
+                    <br/>
+                    <img className="manImage" alt="Dean of Faculty" src={man}/>
                 </div>
                 <div class="right"
                     data-aos="fade-left"
                     data-aos-duration="1500"
                 >
-                    <br/><br/><br/>
+                    <br/><br/><br/><br/>
                     <div class="header">
                         <p>기존의 컴퓨터공학과와 멀티미디어 공학과를 합병하여</p>
                         <p>2016년 1학기부터 새로이 출범한 <span class="highlight">한성대학교 컴퓨터 공학부</span></p>
-                        <br/>
                         <hr class="custom-hr"/>
                     </div>
-                    <br/>
                     <p class="main">
                         창의적인 문제 해결 능력을 갖춘 글로벌 SW 인재 양성을 목표로
                         4개의 트랙별 교과 과정을 운영하고 있으며,<br/>
@@ -57,8 +57,9 @@ const Introduction = () =>{
                             
                         앞으로도 교육, 산학, 연구를 축으로 IT 분야를 선도하는 학부가 되도록 노력하겠습니다.<br/><br/>
 
-                        감사합니다.<br/>
+                        감사합니다.
                     </p>
+                    <p class="foot">한성대학교 학부장<br/></p>
                 </div>
             </div>
             <br/><br/><br/><br/>
@@ -67,14 +68,16 @@ const Introduction = () =>{
                 <div class="left"
                     data-aos="fade-right"
                     data-aos-duration="1500"> 
+                    <br/>
                     <h2>교육 목표</h2>
-                    <img className="manImage" alt="Dean of Faculty" src={man}/>
+                    <br/><br/><br/>
+                    <img className="futureImage" alt="Dean of Faculty" src={computer2}/>
                 </div>
                 <div class="right"
                     data-aos="fade-left"
                     data-aos-duration="1500"
                 >
-                    <br/><br/><br/>
+                    <br/><br/><br/><br/>
                     <div class="header">
                         <p>소프트웨어 기술과 정보통신 기술(ICT)의</p>
                         <p>심화 교육을 통해 <span class="highlight">창의적인 소프트웨어 엔지니어</span>를 양성</p>
@@ -101,17 +104,19 @@ const Introduction = () =>{
                 <div class="left"
                     data-aos="fade-right"
                     data-aos-duration="1500"> 
+                    <br/>
                     <h2>졸업생 사례</h2>
-                    <img className="manImage" alt="Dean of Faculty" src="img/man.jpg"/>
+                    <br/><br/><br/><br/>
+                    <img className="futureImage" alt="Dean of Faculty" src={future}/>
                 </div>
                 <div class="right"
                     data-aos="fade-left"
                     data-aos-duration="1500"
                 >
-                    <br/><br/><br/>
+                    <br/><br/><br/><br/>
                     <div class="header">
                         <p>한성대학교 컴퓨터 공학부 졸업생은</p>
-                        <p>소프트웨어 및 컴퓨터 시스템을 다루는 <span class="highlight">모든 산업 분야</span>에 취업하여 활약</p>
+                        <p>소프트웨어 및 컴퓨터 시스템을 다루는 <span class="highlight">모든 산업 분야</span>에서 활약</p>
                         <hr class="custom-hr"/>
                     </div>
                     <p class="main">
@@ -135,13 +140,14 @@ const Introduction = () =>{
                     data-aos="fade-right"
                     data-aos-duration="1500"> 
                     <h2>오시는 길</h2>
+                    <br/>
                     <Map />
                 </div>
                 <div class="right"
                     data-aos="fade-left"
                     data-aos-duration="1500"
                 >
-                    <br/><br/><br/>
+                    <br/><br/><br/><br/>
                     <p class="come">
                     &nbsp;&nbsp;&nbsp;
                         ▶ &nbsp;위치 : 한성대학교 공학관 A동 104호
@@ -153,7 +159,7 @@ const Introduction = () =>{
                     </p>
                     <hr class="custom-hr"/>
                     <p class="come">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         : 창신역 (6호선) 3번 출구 마을버스 3번 승차
                     </p>
                     <hr class="custom-hr"/>
@@ -168,7 +174,7 @@ const Introduction = () =>{
                     </p>
                     <hr class="custom-hr"/>
                     <p class="come">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         : 02-760-4438
                     </p>
                     <hr class="custom-hr"/>
@@ -179,9 +185,9 @@ const Introduction = () =>{
                     <hr class="custom-hr"/>
                 </div>
             </div>
-            <br/><br/><br/><br/>
-            <TopButton/>
+            <br/><br/><br/>
         </div>
+        <TopButton/>
         </>
     )
 }

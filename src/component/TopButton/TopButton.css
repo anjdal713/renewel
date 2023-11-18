@@ -1,10 +1,11 @@
 .topBtn_wrap {
     position: sticky;
     bottom: 30px;
+    margin-right: 40px;
     float: right;
 }
 .topBtn {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
     color: skyblue !important;
     border: none;
     background: none; 

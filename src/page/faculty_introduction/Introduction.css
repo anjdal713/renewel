@@ -4,7 +4,13 @@
 .manImage{
     width: 400px;
     height: auto;
-    border: 2px solid black;
+    border-radius: 10px;
+    border: 2px solid #e8e8e8;
+}
+.futureImage{
+    width: 430px;
+    height: auto;
+    
 }
 .container{
     width: 90%;
@@ -32,7 +38,7 @@
     font-size: 15px;
 }
 .header p{
-    font-size: 23px;
+    font-size: 21px;
     line-height: 1.5;
     font-weight: 500;
 }
@@ -41,7 +47,7 @@
     font-weight: 600;
 }
 .main{
-    font-size: 14px;
+    font-size: 13px;
     line-height: 2.0;
     font-weight: 300;
 }
@@ -53,4 +59,11 @@
 .headImage{
     height: 500px;
     width : 100%;
+}
+.foot{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    margin-right: 20px;
+    color: rgb(122, 122, 246);
 }

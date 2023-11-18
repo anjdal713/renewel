@@ -32,7 +32,9 @@ const Map = () => {
         <div
         id="map"
         ref={mapContainer}
-        style={{ width: '100%', height: '400px', display: 'block', borderRadius: '30px'}}
+        style={{ width: '100%', height: '430px', display: 'block', borderRadius: '30px',
+                border: '2px solid #e8e8e8'
+        }}
         ></div>
     );
 };
