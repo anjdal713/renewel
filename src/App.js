@@ -3,7 +3,7 @@ import PostMain from './page/post/PostMain';
 import PostView from './page/post/PostView';
 import Introduction from './page/faculty_introduction/Introduction';
 import Header from './component/Header/Header';
-/*
+
 function App() {
   return (
     <>
@@ -19,8 +19,8 @@ function App() {
     </>
   );
 }
-*/
 
+/*
 function App() {
   return (
     <>
@@ -35,6 +35,7 @@ function App() {
     </>
   );
 }
+*/
 
 
 export default App;

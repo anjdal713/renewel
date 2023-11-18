@@ -4,6 +4,7 @@ import { getPostByNo } from '../../Data';
 import './Post.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import head from '../../img/head.jpg';
 
 const PostView = () => {
     useEffect(() => {
@@ -31,11 +32,17 @@ const PostView = () => {
 
     return (
         <>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <h1 align="center">학사공지</h1>
-        <br/>
-        <hr class="custom-hr"/>
-        <br/>
+        <div className="head-image">
+            <img className="headImage" alt="Head" src={head}/>
+        </div>
+        <br/><br/><br/>
+        <div data-aos="fade-up"
+                data-aos-duration="1500">
+            <h1 align="center">학사공지</h1>
+            <br/>
+            <hr class="custom-hr"/>
+            <br/>
+        </div>
         <div data-aos="fade-up"
             data-aos-duration="1500"
             className="post-view-wrapper">
