@@ -1,0 +1,46 @@
+
+.post-view-wrapper {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.post-view-go-list-btn {
+    border-width: thin;
+    padding: 10px;
+    background-color: rgb(250, 249, 249);
+    border-radius: 10px;
+    display: block; 
+    margin: 0 auto;
+}
+.post-view-head{
+    background-color: aliceblue;
+}
+.title-label{
+    font-size: 20px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.label2{
+    font-size: 13px;
+    margin-left: 30px;
+    opacity: 0.7;
+}
+.p1{
+    margin-left: 30px;
+    line-height: 3.5;
+}
+.custom-hr{
+    opacity: 0.3;
+}
+.hr-top{
+    height: 2px; /* 선의 두께를 조절 */
+    background-color: black;
+    border: none;
+}
+.custom-hr2{
+    opacity: 0.5;
+}
+.headImage{
+    height: 500px;
+    width : 100%;
+}
