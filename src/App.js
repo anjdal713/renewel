@@ -3,7 +3,7 @@ import PostMain from './page/post/PostMain';
 import PostView from './page/post/PostView';
 import Introduction from './page/faculty_introduction/Introduction';
 import Header from './component/Header/Header';
-
+import ScrollToTop from './component/ScrollToTop';
 /*
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
     <Header/>
     <div className="App">
       <Router>
+      <ScrollToTop />
         <Routes>
           <Route exact path='/postView/:no' element={<PostView />} /> 
           <Route exact path='/' element={<PostMain />} />
@@ -28,6 +29,7 @@ function App() {
     <Header/>
     <div className="App">
       <Router>
+      <ScrollToTop />
         <Routes>
           <Route exact path='/' element={<Introduction />} />
         </Routes>
