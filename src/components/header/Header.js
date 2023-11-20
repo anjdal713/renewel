@@ -1,10 +1,11 @@
 // Header.js
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import logo from '../../img/HSU-logo.png';
 import logo2 from '../../img/HSU-logo2.png';
 import './Header.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Header() {
     const [scrolling, setScrolling] = useState(false);
