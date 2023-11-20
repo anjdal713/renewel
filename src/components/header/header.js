@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import logo from './img/HSU-logo.png';
-import logo2 from './img/HSU-logo2.png';
+import logo from '../../img/HSU-logo.png';
+import logo2 from '../../img/HSU-logo2.png';
 import './header.css';
 
 function Header() {
