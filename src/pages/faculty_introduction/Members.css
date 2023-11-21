@@ -1,0 +1,71 @@
+.professor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left:60px;
+}
+
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.company-table th,
+.company-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.professor-table th,
+.professor-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.professor-table tbody tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+.professor-table th {
+    background-color: aliceblue;
+}
+
+.committee-content {
+    text-align: center;
+}
+
+.company-table tbody tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+.company-table th {
+    background-color: aliceblue;
+}
+
+.members_container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.professor-info div {
+    white-space: pre-wrap;
+    text-align: left;
+}
+
+.professor-info div.name {
+    font-weight: bold;
+}
+
+.company_table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.companyimg {
+    max-width: 1000px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    height: auto;
+}

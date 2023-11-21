@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, {useState} from 'react';
 import PostMain from './pages/post/PostMain';
 import PostView from './pages/post/PostView';
 import Introduction from './pages/faculty_introduction/Introduction';
@@ -7,14 +8,25 @@ import ScrollToTop from './components/ScrollToTop';
 import Background from './pages/Background';
 import Footer from './components/footer/footer';
 import RoadmapPage from './pages/RoadmapPage';
-//import Program from './pages/program';
+import Program from './pages/Program';
+import Members from './pages/faculty_introduction/Members';
+import StudentActivity from './pages/studentActivity';
+import Global from './components/studentActivity/global';
+import data from "./pages/Home/Home";
+
 
 
 function App() {
+  const [hoveredId, setHoveredId] = useState(null);
+  // 마우스 호버 상태 업데이트 함수
+  const handleHover = (id) => {
+    setHoveredId(id);
+  };
   return (
     <>
-    <Header/>
+    
     <div className="App">
+    <Header/>
       <Router>
       <ScrollToTop />
         <Routes>
@@ -22,12 +34,23 @@ function App() {
           <Route exact path='/post' element={<PostMain />} />
           <Route exact path='/postView/:no' element={<PostView />} /> 
           <Route exact path='/faculty_introduction' element={<Introduction />} />
-          <Route exact path='/roadmap' element={<RoadmapPage />} />
+          <Route exact path='/program' element={<Program />} />
+          <Route exact path='/members' element={<Members />} />
+          <Route exact path='/Global' element={<Global />} />
+          <Route exact path='/activity' element={<StudentActivity data={data} hoveredId={hoveredId} onHover={handleHover} />} />
           
         </Routes>
       </Router>
+      <Footer/>
     </div>
-    <Footer/>
+    <div>
+    <Router>
+        <Routes>
+          <Route exact path='/roadmap' element={<RoadmapPage />} />
+        </Routes>
+      </Router>
+    </div>
+    
     </>
   );
 }

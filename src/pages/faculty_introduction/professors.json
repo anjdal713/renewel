@@ -1,0 +1,194 @@
+[
+    {
+      "id": 1,
+      "name": "강희중",
+      "photo": "./강희중.gif",
+      "contact": "(02)760-4131",
+      "email": "hjkang@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~hjkang"
+    },
+    {
+      "id": 2,
+      "name": "이재문",
+      "photo": "./이재문.png",
+      "contact": "(02)760-4135",
+      "email": "jmlee@hansung.ac.kr",
+      "homepage": "https://220.67.231.92/android"
+    },
+    {
+      "id": 3,
+      "name": "계희원",
+      "photo": "./계희원.png",
+      "contact": "(02)760-8014",
+      "email": "kuei@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~hwkye"
+    },
+    {
+      "id": 4,
+      "name": "이지은",
+      "photo": "./이지은.jpg",
+      "contact": "(02)760-4341",
+      "email": "jieunlee@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 5,
+      "name": "권영미",
+      "photo": "./권영미.png",
+      "contact": "(02)760-4134",
+      "email": "ymkwon@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~ymkwon"
+    },
+    {
+      "id": 6,
+      "name": "이항찬",
+      "photo": "./이항찬.png",
+      "contact": "(02)760-4307",
+      "email": "lhangch@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 7,
+      "name": "김남윤",
+      "photo": "./김남윤.jpg",
+      "contact": "(02)760-4348",
+      "email": "nykim@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~nykim"
+    },
+    {
+      "id": 8,
+      "name": "장재영, 학부장",
+      "photo": "./장재영.jpg",
+      "contact": "(02)760-4495",
+      "email": "jychang@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~chang"
+    },
+    {
+      "id": 9,
+      "name": "김성동",
+      "photo": "./김성동.jpg",
+      "contact": "(02)760-4161",
+      "email": "sdkim@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~sdkim"
+    },
+    {
+      "id": 10,
+      "name": "정인상",
+      "photo": "./정인상.gif",
+      "contact": "(02)760-4301",
+      "email": "insang@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~insang"
+    },
+    {
+      "id": 11,
+      "name": "김영웅",
+      "photo": "./김영웅.jpg",
+      "contact": "(02)760-4311",
+      "email": "yukim@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/web/database"
+    },
+    {
+      "id": 12,
+      "name": "정인환",
+      "photo": "./정인환.jpg",
+      "contact": "(02)760-4136",
+      "email": "ihjung@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~net"
+    },
+    {
+      "id": 13,
+      "name": "김진모",
+      "photo": "./김진모.jfif",
+      "contact": "(02)760-4046",
+      "email": "jinmo.kim@hansung.ac.kr",
+      "homepage": "https://sites.google.com/view/jmkim"
+    },
+    {
+      "id": 14,
+      "name": "조세홍",
+      "photo": "./조세홍.png",
+      "contact": "(02)760-4478",
+      "email": "chosh@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 15,
+      "name": "김진환",
+      "photo": "./김진환.png",
+      "contact": "(02)760-4340",
+      "email": "kimjh@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 16,
+      "name": "한기준",
+      "photo": "./한기준.jpg",
+      "contact": "(02)760-4328",
+      "email": "keejun.han@hansung.ac.kr",
+      "homepage": "https://sites.google.com/hansung.ac.kr/aml"
+    },
+    {
+      "id": 17,
+      "name": "박승현",
+      "photo": "./SPARK.jpg",
+      "contact": "(02)760-4120",
+      "email": "sp@hansung.ac.kr",
+      "homepage": "https://sp-mcslab.github.io"
+    },
+    {
+      "id": 18,
+      "name": "허준영",
+      "photo": "./허준영.jpg",
+      "contact": "(02)760-8039",
+      "email": "jyheo@hansung.ac.kr",
+      "homepage": "https://jylecture.blogspot.kr"
+    },
+    {
+      "id": 19,
+      "name": "엄종석",
+      "photo": "./엄종석.png",
+      "contact": "(02)760-4133",
+      "email": "jsum@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~jsum"
+    },
+    {
+      "id": 20,
+      "name": "황기태",
+      "photo": "./황기태.gif",
+      "contact": "(02)760-4300",
+      "email": "calafk@hansung.ac.kr",
+      "homepage": "https://hansung.ac.kr/~kitae"
+    },
+    {
+      "id": 21,
+      "name": "이동희",
+      "photo": "./dhlee.jpg",
+      "contact": "(02)760-8068",
+      "email": "dhlee55555@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 22,
+      "name": "황호영",
+      "photo": "./황호영.png",
+      "contact": "(02)760-5964",
+      "email": "hyhwang@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 23,
+      "name": "이석기",
+      "photo": "./이석기.jpg",
+      "contact": "(02)760-8011",
+      "email": "seelee@hansung.ac.kr",
+      "homepage": ""
+    },
+    {
+      "id": 24,
+      "name": "최병수 (명예교수)",
+      "photo": "./최병수.png",
+      "contact": "",
+      "email": "cbs@hansung.ac.kr",
+      "homepage": ""
+    }
+  ]

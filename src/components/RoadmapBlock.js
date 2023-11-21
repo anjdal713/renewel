@@ -169,7 +169,7 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id }) => {
         height: '40px',
         border: '1px solid #000',
         backgroundColor: blockColor,
-        color: 'white', // text color
+        color: 'white',
         fontSize: refactorFontSize(text),
         display: 'flex',
         alignItems: 'center',

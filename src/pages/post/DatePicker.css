@@ -19,7 +19,7 @@
 }
 
 .date-separator {
-    margin: 0 8px; /* 원하는 간격을 조절하세요 */
+    margin: 0 8px;
 }
 .datepicker-input {
     background-color: white;
@@ -32,7 +32,7 @@
     align-items: center;
 }
 .calendar-icon {
-    margin-left: 11px; /* 아이콘과 버튼 사이의 간격 조절 */
+    margin-left: 11px;
     margin-top: -3px;
     color: black;
 }

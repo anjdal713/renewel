@@ -9,5 +9,17 @@
     justify-content: center; /* 가운데 정렬을 위한 설정 */
     align-items: center; /* 세로 방향 가운데 정렬을 위한 설정 */
     text-align: center;
-    padding-top: 300px;
-}
+    padding-top: 50px;
+    line-height:15px;
+    font-size: 13px;
+  }
+  
+  .footer-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:80%;
+    height: 1px;
+    background-color: rgb(102, 101, 101);
+  }

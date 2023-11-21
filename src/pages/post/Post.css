@@ -33,7 +33,7 @@
     opacity: 0.3;
 }
 .hr-top{
-    height: 2px; /* 선의 두께를 조절 */
+    height: 2px;
     background-color: black;
     border: none;
 }

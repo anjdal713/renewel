@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
-import './Introduction.css'
 import AOS from "aos";
-import "aos/dist/aos.css";
 import Map from './Map';
 import TopButton from '../../components/topButton/TopButton';
 import man from '../../img/man.png';
 import head from '../../img/main-background2.jpg';
 import future from '../../img/future.png';
 import computer2 from '../../img/computer2.jpg';
+import './Introduction.css'
+import "aos/dist/aos.css";
 
 const Introduction = () =>{
     useEffect(() => {
@@ -20,7 +20,8 @@ const Introduction = () =>{
             <img className="headImage" alt="Head" src={head}/>
         </div>
         <br/><br/><br/>
-        <div data-aos="fade-up"
+        <div className="head"
+                data-aos="fade-up"
                 data-aos-duration="1500">
                 <h1 align="center">학부 소개</h1>
                 <br/>
