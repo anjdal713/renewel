@@ -128,7 +128,7 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           data-aos-duration="1500">
       <ButtonContainer>
         {/* <Button onClick={() => handleButtonClick("전체")}>전체</Button> */}
-        <Button onClick={() => handleButtonClick("캡스톤 디자인")} defaultChecked>캡스톤 디자인</Button>
+        <Button onClick={() => handleButtonClick("캡스톤 디자인")} >캡스톤 디자인</Button>
         <Button onClick={() => handleButtonClick("경진대회")}>경진대회</Button>
         <Button onClick={() => handleButtonClick("프로그래밍 캠프")}>프로그래밍 캠프</Button>
       </ButtonContainer>
