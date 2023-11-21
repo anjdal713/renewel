@@ -13,7 +13,7 @@ import Members from './pages/faculty_introduction/Members';
 import StudentActivity from './pages/studentActivity';
 import Global from './components/studentActivity/global';
 import data from "./pages/Home/Home";
-
+import './App.css';
 
 
 function App() {

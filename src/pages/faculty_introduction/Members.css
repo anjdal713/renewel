@@ -24,7 +24,7 @@
 }
 
 .professor-table tbody tr:nth-child(even) {
-    background-color: aliceblue;
+    
 }
 
 .professor-table th {
@@ -34,10 +34,6 @@
 
 .committee-content {
     text-align: center;
-}
-
-.company-table tbody tr:nth-child(even) {
-    background-color: aliceblue;
 }
 
 .company-table th {
@@ -78,10 +74,42 @@
     padding-left: 70px;
     width:60%;
 }
+.comm-left{
+    flex: 0.4; 
+    padding: 10px;
+}
+.comm-right{
+    flex: 0.6; 
+    padding: 10px;
+    width:60%;
+}
 .container{
     width: 90%;
     margin: 0 auto;
 }
-.comittees_section{
+.committees_section{
     display: flex;
+}
+.committees-image{
+    width: 430px;
+    height: 320px;
+    border-radius: 10px;
+    border: 2px solid #e8e8e8;
+}
+.comm-head{
+    font-size: 21px;
+    line-height: 1.5;
+    font-weight: 500;;
+}
+.comm-main{
+    font-size: 15px;
+    line-height: 2.5;
+    font-weight: 300;
+}
+.comm-foot{
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+    margin-right: 20px;
+    color: rgb(122, 122, 246);
 }

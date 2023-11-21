@@ -60,7 +60,7 @@ const Members = () => {
                                                 <div>Tel: {professor.contact}</div>
                                                 <div>Email: {professor.email}</div>
                                                 <div>
-                                                    <a href={professor.homepage} target="_blank" rel="noopener noreferrer">
+                                                    <a href={professor.homepage} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                                         {professor.homepage.replace('https://', '')}
                                                     </a>
                                                 </div>
@@ -81,7 +81,7 @@ const Members = () => {
                                                         <div>Tel: {professors[index + 1].contact}</div>
                                                         <div>Email: {professors[index + 1].email}</div>
                                                         <div>
-                                                            <a href={professors[index + 1].homepage} target="_blank" rel="noopener noreferrer">
+                                                            <a href={professors[index + 1].homepage} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                                                 {professors[index + 1].homepage.replace('https://', '')}
                                                             </a>
                                                         </div>
@@ -129,7 +129,7 @@ const Members = () => {
                                     <td>{company.name}</td>
                                     
                                     <td>
-                                        <a href={company.homepage} target="_blank" rel="noopener noreferrer">
+                                        <a href={company.homepage} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                                             {company.homepage.replace('http://', '').replace('https://', '')}
                                         </a>
                                     </td>
@@ -144,31 +144,37 @@ const Members = () => {
             
             <div className="committees_section">
                 <br/>
-                    <div className="mem-left"
-                        data-aos="fade-up"
+                    <div className="comm-left"
+                        data-aos="fade-right"
                         data-aos-duration="1500">
                         <br/>
                         <h2>위원회</h2>
                         <br/><br/><br/>
-
-                        <div className="center">
-                            <table className="company-table">
+                        {committees.map((committee, index) => (
+                            <>
+                            <img className="committees-image" alt={committee.name} src={committee.image}/>
+                            <br/><br/><br/><br/>
+                            </>
+                        ))}
+                        
+                    </div>
+                    <div className="comm-right"
+                        data-aos="fade-left"
+                        data-aos-duration="1500"
+                    >
+                        <br/><br/><br/><br/><br/><br/>
+                        {committees.map((committee, index) => (
+                            <div className="committee-header" key={index}>
+                                <p className="comm-head"><b>{committee.name}</b></p>
+                                <hr className="custom-hr"/>
+                                <p className="comm-main">{committee.description}</p>
+                                <br/><br/><br/>
+                                <p className='comm-foot'>{committee.member}</p>
+                                <p className='comm-foot'>{committee.head}</p>
                                 
-                                <br/><br/><br/><br/><br/>
-                                {committees.map((committee, index) => (
-                                    <div className="committee-content" key={index}>
-                                        <h3>{committee.name}</h3>
-                                        <img src={committee.image} alt={committee.name} />
-
-                                        <p>{committee.description}</p>
-                                        <br/>
-                                        <p>{committee.head}</p>
-                                        <p>{committee.member}</p>
-                                        <br/><br/>
-                                    </div>
-                                ))}
-                            </table>
-                        </div>
+                                <br/><br/><br/><br/>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
