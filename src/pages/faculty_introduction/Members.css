@@ -1,14 +1,16 @@
 .professor-table {
     width: 100%;
     border-collapse: collapse;
-    margin-left:60px;
+    
 }
 
 .company-table {
-    width: 100%;
+    width: 90%;
     border-collapse: collapse;
 }
-
+.company-table th{
+    text-align: center;
+}
 .company-table th,
 .company-table td {
     padding: 8px;
@@ -17,7 +19,7 @@
 
 .professor-table th,
 .professor-table td {
-    padding: 15px;
+    padding: 10px;
     border: 1px solid #ddd;
 }
 
@@ -27,6 +29,7 @@
 
 .professor-table th {
     background-color: aliceblue;
+    text-align: center;
 }
 
 .committee-content {
@@ -42,14 +45,14 @@
 }
 
 .members_container {
-    text-align: center;
-    max-width: 1000px;
-    margin: 0 auto;
+    display: flex;
 }
 
 .professor-info div {
     white-space: pre-wrap;
     text-align: left;
+    margin-left: 30px;
+    line-height: 2.0;
 }
 
 .professor-info div.name {
@@ -58,14 +61,27 @@
 
 .company_table {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
-
 .companyimg {
-    max-width: 1000px;
-    margin-left: 100px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #e8e8e8;
     margin-bottom: 50px;
     height: auto;
+}
+.mem-left{
+    flex: 0.6; 
+    padding: 10px;
+}
+.mem-right{
+    flex: 0.4; 
+    padding-left: 70px;
+    width:60%;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+.comittees_section{
+    display: flex;
 }

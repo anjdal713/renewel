@@ -90,23 +90,23 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
   }, []);
 
   const leftImageProps = useSpring({
-    opacity: scrollPosition > 300 ? 1 : 0, // 스크롤 위치에 따라 조절
-    transform: `translateX(${scrollPosition > 300 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
+    opacity: scrollPosition > 100 ? 1 : 0, // 스크롤 위치에 따라 조절
+    transform: `translateX(${scrollPosition > 100 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
   });
 
   const rightImageProps = useSpring({
-    opacity: scrollPosition > 700 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 700 ? 0 : 100}px)`,
+    opacity: scrollPosition > 400 ? 1 : 0,
+    transform: `translateX(${scrollPosition > 400 ? 0 : 100}px)`,
   });
 
   const leftImageProps2 = useSpring({
-    opacity: scrollPosition > 1300 ? 1 : 0, // 스크롤 위치에 따라 조절
-    transform: `translateX(${scrollPosition > 1300 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
+    opacity: scrollPosition > 800 ? 1 : 0, // 스크롤 위치에 따라 조절
+    transform: `translateX(${scrollPosition > 1200 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
   });
 
   const rightImageProps2 = useSpring({
-    opacity: scrollPosition > 1900 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 1900 ? 0 : 100}px)`,
+    opacity: scrollPosition > 1400 ? 1 : 0,
+    transform: `translateX(${scrollPosition > 1400 ? 0 : 100}px)`,
   });
 
   return (

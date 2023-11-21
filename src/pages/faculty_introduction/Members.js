@@ -19,22 +19,21 @@ const Members = () => {
             </div>
             <br/><br/><br/>
             <div data-aos="fade-up"
-                 data-aos-duration="1500">
+                data-aos-duration="1500">
                 <h1 align="center">구성원 소개</h1>
                 <br/>
                 <hr class="custom-hr"/>
                 <br/>
             </div>
-            <br/>
+            <br/><br/>
+            <div class="container">
             <div className="members_container">
-                <br />
-                <h2 align="center">학부 교수진</h2>
-                <br/><br/>
-                <div className="center">
+                <div className="center"
+                        data-aos="fade-up"
+                        data-aos-duration="1500">
+                    <h2>학부 교수진</h2>
+                    <br/><br/>
                     <table className="professor-table">
-                        <div className="up"
-                             data-aos="fade-up"
-                             data-aos-duration="1500">
                         <thead>
 
                         <tr>
@@ -48,14 +47,14 @@ const Members = () => {
                             {professors.map((professor, index) => (
                                 index % 2 === 0 && (
                                     <tr key={professor.id}>
-                                        <td>
+                                        <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
                                             <img
                                                 src={professor.photo}
                                                 alt={professor.name}
-                                                style={{ width: '120px', height: '160px' }}
+                                                style={{ width: '120px', height: '160px', display: 'inline-block' }}
                                             />
                                         </td>
-                                        <td style={{ width: '300px' }}>
+                                        <td style={{ width: '510px'}}>
                                             <div className="professor-info">
                                                 <div className="name">{professor.name}</div>
                                                 <div>Tel: {professor.contact}</div>
@@ -69,14 +68,14 @@ const Members = () => {
                                         </td>
                                         {professors[index + 1] && (
                                             <>
-                                                <td>
+                                                <td style={{ textAlign: 'center', verticalAlign: 'middle' }}>
                                                     <img
                                                         src={professors[index + 1].photo}
                                                         alt={professors[index + 1].name}
-                                                        style={{ width: '120px', height: '160px' }}
+                                                        style={{ width: '120px', height: '160px' ,display: 'inline-block'}}
                                                     />
                                                 </td>
-                                                <td style={{ width: '300px' }}>
+                                                <td style={{ width: '510px' }}>
                                                     <div className="professor-info">
                                                         <div className="name">{professors[index + 1].name}</div>
                                                         <div>Tel: {professors[index + 1].contact}</div>
@@ -94,35 +93,41 @@ const Members = () => {
                                 )
                             ))}
                             </tbody>
-                        </div>
                     </table>
                 </div>
+                
                 </div>
+                
             <br/><br/><br/><br/><br/><br/>
-            <hr className="custom-hr"/>
+            
             <div className="company_table">
                 <br/>
-                <div className="center"
-                     data-aos="fade-up"
-                     data-aos-duration="1500">
+                <div className="mem-left"
+                    data-aos="fade-right"
+                    data-aos-duration="1500">
                     <br/>
-                    <h2 align="center">가족 기업</h2>
-                    <br/><br/>
+                    <h2>가족 기업</h2>
+                    <br/><br/><br/>
+                    
                     <img className="companyimg" alt="company" src="./company.jpg"/>
-                    <div className="center">
-                        <table className="company-table">
-                            <thead>
+                </div>
+                <div className="mem-right"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                >
+                    <br/><br/><br/><br/><br/>
+                    <table className="company-table">
+                        <thead>
                             <tr>
                                 <th>기업명</th>
-                                <th>소개</th>
                                 <th>홈페이지</th>
                             </tr>
-                            </thead>
-                            <tbody>
+                        </thead>
+                        <tbody>
                             {companies.map((company) => (
                                 <tr key={company.id}>
                                     <td>{company.name}</td>
-                                    <td>{company.intro}</td>
+                                    
                                     <td>
                                         <a href={company.homepage} target="_blank" rel="noopener noreferrer">
                                             {company.homepage.replace('http://', '').replace('https://', '')}
@@ -130,35 +135,39 @@ const Members = () => {
                                     </td>
                                 </tr>
                             ))}
-                            </tbody>
-                        </table>
-                        <br/><br/><br/><br/>
-                        <hr className="custom-hr"/>
-                        <div className="committees_section">
-                            <br/>
-                            <div className="center"
-                                 data-aos="fade-up"
-                                 data-aos-duration="1500">
-                                <br/>
-                                <div className="center">
-                                    <table className="company-table">
-                                        <h2 align="center">위원회</h2>
-                                        <br/><br/><br/><br/><br/>
-                                            {committees.map((committee, index) => (
-                                                <div className="committee-content" key={index}>
-                                                    <h3>{committee.name}</h3>
-                                                    <img src={committee.image} alt={committee.name} />
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
-                                                    <p>{committee.description}</p>
-                                                    <br/>
-                                                    <p>{committee.head}</p>
-                                                    <p>{committee.member}</p>
-                                                    <br/><br/>
-                                                </div>
-                                            ))}
-                                    </table>
-                                </div>
-                            </div>
+            <br/><br/><br/><br/><br/><br/>
+            
+            <div className="committees_section">
+                <br/>
+                    <div className="mem-left"
+                        data-aos="fade-up"
+                        data-aos-duration="1500">
+                        <br/>
+                        <h2>위원회</h2>
+                        <br/><br/><br/>
+
+                        <div className="center">
+                            <table className="company-table">
+                                
+                                <br/><br/><br/><br/><br/>
+                                {committees.map((committee, index) => (
+                                    <div className="committee-content" key={index}>
+                                        <h3>{committee.name}</h3>
+                                        <img src={committee.image} alt={committee.name} />
+
+                                        <p>{committee.description}</p>
+                                        <br/>
+                                        <p>{committee.head}</p>
+                                        <p>{committee.member}</p>
+                                        <br/><br/>
+                                    </div>
+                                ))}
+                            </table>
                         </div>
                     </div>
                 </div>

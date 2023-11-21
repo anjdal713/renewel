@@ -39,7 +39,7 @@ function Header() {
                 <Nav.Link href="/faculty_introduction" className="white-text">학부 소개</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link href="/members" className="white-text">구성원</Nav.Link>
+                <Nav.Link href="/members" className="white-text">구성원 소개</Nav.Link>
             </Nav.Item>
             <Nav.Item>
                 <Nav.Link href="/program" className="white-text">학사 과정</Nav.Link>
