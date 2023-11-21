@@ -6,6 +6,7 @@ import logo from '../../img/HSU-logo.png';
 import logo2 from '../../img/HSU-logo2.png';
 import './header.css';
 
+
 function Header() {
   const [scrolling, setScrolling] = useState(false);
 
@@ -47,7 +48,7 @@ function Header() {
               <Nav.Link href="/program" className="white-text">학사 과정</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/activity" className="white-text">학생 활동</Nav.Link>
+              <Nav.Link href="/studentActivity" className="white-text">학생 활동</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="/news" className="white-text">새 소식</Nav.Link>
