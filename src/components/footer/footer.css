@@ -1,0 +1,25 @@
+.footer-container {
+    position: relative;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+    background-color: transparent; /* 상위 요소와 동일하게 투명한 배경으로 설정 */
+    color: rgb(68, 68, 68);
+    display: flex;
+    justify-content: center; /* 가운데 정렬을 위한 설정 */
+    align-items: center; /* 세로 방향 가운데 정렬을 위한 설정 */
+    text-align: center;
+    padding-top: 50px;
+    line-height:15px;
+    font-size: 13px;
+  }
+  
+  .footer-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width:80%;
+    height: 1px;
+    background-color: rgb(102, 101, 101);
+  }

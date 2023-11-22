@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "㈜에이스솔루션",
+      "intro": "한국정보화진흥원과 대형SI업체 출신 전문가를 보유한 에이스솔루션은 1990년대 ···",
+      "homepage": "http://www.acesolution.co.kr"
+    },
+    {
+      "id": 2,
+      "name": "㈜케이포엠",
+      "intro": "1999년 2월 신기술 집약형 벤처기업으로 출발하였습니다. 당사는 기업 애플리케···",
+      "homepage": "http://www.k4m.com"
+    },
+    {
+      "id": 3,
+      "name": "㈜한메소프트",
+      "intro": "인터넷 시대가 도래하였고 외산 소프트웨어가 우리 시장을 잠식해 가는 21세기···",
+      "homepage": "http://www.hanmesoft.com"
+    },
+    {
+      "id": 4,
+      "name": "㈜리얼웹",
+      "intro": "리얼웹은 기업프세스의 전사적 관점에서의 관리를 통해 기업 전략을 프로세스 및···",
+      "homepage": "http://www.realweb21.com"
+    },
+    {
+      "id": 5,
+      "name": "㈜기산텔레콤",
+      "intro": "당사는 1994년 설립 당시부터 항상 끊임 없는 변화와 새로운 기술의 시도를 통해···",
+      "homepage": "http://www.kisantel.co.kr"
+    },
+    {
+      "id": 6,
+      "name": "㈜세븐코아",
+      "intro": "㈜세븐코아는 임베디드 가상화(Virtualization) 솔루션 전문업체입니다. 2007년 창···",
+      "homepage": "http://www.sevencore.co.kr"
+    },
+    {
+      "id": 7,
+      "name": "㈜에스큐아이소프트",
+      "intro": "SQI소프트는 통신 사업분야에서 컨설팅, 시스템 구축 및 운영까지의 전반적인 서···",
+      "homepage": "http://www.sqisoft.com"
+    },
+    {
+      "id": 8,
+      "name": "㈜디알엠인사이드",
+      "intro": "㈜디알엠인사이드는 디지털콘텐츠 보호 및 유통 과정에서 저작권자, 유통사업자, ···",
+      "homepage": "http://www.drminside.com"
+    },
+    {
+      "id": 9,
+      "name": "㈜네이버시스템",
+      "intro": "네이버시스템㈜는 Akamai Net Alliance 파트너로서, 웹, 모바일 컨텐츠···",
+      "homepage": "http://www.neighbor21.co.kr"
+    },
+    {
+      "id": 10,
+      "name": "㈜비피엔알",
+      "intro": "SAP KM은 기업내의 다양한 형태의 정보를 효율적으로 관리하기 위한 서비스를···",
+      "homepage": "http://www.bpnr.co.kr"
+    }
+    ]
+  
