@@ -172,7 +172,7 @@ const RoadmapButton = ({ options, buttonText }) => {
     };
 
     return (
-        <div style={{ position: 'absolute', top: '5px', right: '5px', zIndex: '999' }}>
+        <div style={{ position: 'absolute', top: '5px', right: '5px', zIndex: '1999' }}>
             <div
                 onClick={toggleDropdown}
                 style={{
@@ -184,6 +184,7 @@ const RoadmapButton = ({ options, buttonText }) => {
                     textAlign: 'left',
                     cursor: 'pointer',
                     position: 'relative',
+                    zIndex: '999',
                 }}
             >
                 {selectedOption || buttonText}

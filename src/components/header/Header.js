@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import logo from '../../img/HSU-logo.png';
 import logo2 from '../../img/HSU-logo2.png';
 import './Header.css';
-import openRoadmapPage from '../../pages/openRoadmapPage'; 
 
 function Header() {
     const [scrolling, setScrolling] = useState(false);
@@ -24,6 +24,9 @@ function Header() {
         window.removeEventListener('scroll', handleScroll);
     };
     }, []);
+
+    if (window.location.pathname === "/roadmap")
+        return null;
 
     return (
         <div className={`header-container ${scrolling ? 'scrolled' : ''}`}>
@@ -50,9 +53,9 @@ function Header() {
             <Nav.Item>
                 <Nav.Link href="/post" className="white-text">학사 공지</Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-                <Nav.Link onClick={openRoadmapPage} className="white-text">로드맵</Nav.Link>
-            </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/roadmap" className="white-text" target="_blank" rel="noopener noreferrer">로드맵</Nav.Link>
+                </Nav.Item>
             </Nav>
         </div>
         </header>

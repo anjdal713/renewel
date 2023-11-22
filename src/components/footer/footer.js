@@ -2,6 +2,8 @@ import React from 'react';
 import './footer.css';
 
 function Footer() {
+  if (window.location.pathname === "/roadmap") return null;
+
   return (
     <footer className="footer-container">
       <div className="footer-line">

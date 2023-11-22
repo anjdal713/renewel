@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Draggable from 'react-draggable';
-import { groupedMagnetInfo } from './RoadmapMagnet';
+import { groupedMagnetInfo, magnetInfo } from './RoadmapMagnet';
 
 export const blocksByColor = {
     // id 구분 - 1xx: 학부공통, 20x: 트랙필수,
@@ -95,50 +95,95 @@ export const blocksByColor = {
     ]
 };
 
-const RoadmapBlock = ({ position: initialPosition, text, blockColor, id }) => {
+let basisCount = 0;
+let essentialCount = 0;
+let optionCount = 0;
+
+const RoadmapBlock = ({ position: initialPosition, text, blockColor, id, onCountUpdate }) => {
 
     const [position, setPosition] = useState(initialPosition);
     const [isStuck, setIsStuck] = useState(false);
 
     const checkPositionInContainer = (x, y, containerX, containerY, containerWidth, containerHeight) => {
         const maxX = containerX + containerWidth;
-        const maxY = containerY + containerHeight;
+        const maxY = containerY + containerHeight + 300;
 
         return x >= containerX && x <= maxX && y >= containerY && y <= maxY;
     };
 
     const handleDrag = (e, ui) => {
         const { x, y } = ui;
-
+        let deltaY = 0;
         let insideMagnet = false;
-        let currentMagnetInfo = [];
 
+        const currentMagnetInfo = getMagnetInfoForId(id);
+        if (!currentMagnetInfo) return;
 
+        const lastTwoDigits = id % 100;
+        const adjustedMagnetInfo = adjustMagnetInfoPosition(currentMagnetInfo, lastTwoDigits);
 
-        if (id >= 101 && id <= 199) {
-            currentMagnetInfo = groupedMagnetInfo.id1;
-        } else if (id >= 201 && id <= 299 || id === 999) {
-            currentMagnetInfo = groupedMagnetInfo.id2;
-        } else if (id >= 301 && id <= 399) {
-            currentMagnetInfo = groupedMagnetInfo.id3;
-        } else if (id >= 401 && id <= 499) {
-            currentMagnetInfo = groupedMagnetInfo.id4;
-        } else if (id >= 501 && id <= 599) {
-            currentMagnetInfo = groupedMagnetInfo.id5;
-        }
-
-        // 위치가 일정 좌표 안에 있는지 확인
-        currentMagnetInfo.forEach((container) => {
-            const { x: containerX, y: containerY, width: containerWidth, height: containerHeight } = container;
+        adjustedMagnetInfo.forEach((container) => {
+            const { x: containerX, y: containerY, width: containerWidth, height: containerHeight, magnetId } = container;
             const inContainer = checkPositionInContainer(x, y, containerX, containerY, containerWidth, containerHeight);
 
             if (inContainer) {
                 insideMagnet = true;
                 setIsStuck(true);
-                setPosition({
-                    x: containerX + containerWidth / 2,
-                    y: containerY + containerHeight / 2,
-                });
+
+                const updatedMagnetInfo = magnetInfo.find(info => info.magnetId === magnetId);
+                if (updatedMagnetInfo) {
+                    const originalBlockCnt = updatedMagnetInfo.blockCnt;
+                    updatedMagnetInfo.blockCnt += 1;
+
+
+                    // magnetInfo 업데이트
+                    const updatedMagnetInfoIndex = magnetInfo.findIndex(info => info.magnetId === magnetId);
+                    if (updatedMagnetInfoIndex !== -1) {
+                        magnetInfo[updatedMagnetInfoIndex].blockCnt += 1;
+
+                        // blockCnt가 증가할 때마다 y값 조정
+                        if (updatedMagnetInfo.blockCnt > originalBlockCnt) {
+                            deltaY = updatedMagnetInfo.blockCnt * 21;
+                            magnetInfo[updatedMagnetInfoIndex].y += deltaY;
+                            console.log(deltaY);
+                            setPosition({
+                                x: containerX + containerWidth / 2,
+                                y: containerY + containerHeight / 2 + deltaY, // 위치 변경
+                            });
+
+
+                            // 동기화를 위해 adjustedMagnetInfo에서도 값을 업데이트
+                            const adjustedMagnetInfoIndex = adjustedMagnetInfo.findIndex(info => info.magnetId === magnetId);
+                            if (adjustedMagnetInfoIndex !== -1) {
+                                adjustedMagnetInfo[adjustedMagnetInfoIndex].y -= deltaY;
+                            }
+                        }
+
+                        console.log("magnetInfo가 성공적으로 업데이트되었습니다.", magnetInfo);
+                    } else {
+                        console.log("magnetId를 찾을 수 없습니다.");
+                    }
+                }
+
+                // block 종류별로 count 증가
+                switch (true) {
+                    case id >= 101 && id <= 199:
+                        optionCount += 1;
+                        onCountUpdate(essentialCount, basisCount, optionCount);
+                        break;
+                    case (id >= 201 && id <= 299) || id === 999:
+                        essentialCount += 1;
+                        optionCount += 1;
+                        onCountUpdate(essentialCount, basisCount, optionCount);
+                        break;
+                    case id >= 301 && id <= 399:
+                        basisCount += 1;
+                        optionCount += 1;
+                        onCountUpdate(essentialCount, basisCount, optionCount);
+                        break;
+                    default:
+                        break;
+                }
             }
         });
 
@@ -146,6 +191,32 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id }) => {
             setIsStuck(false);
             setPosition({ x, y });
         }
+    };
+
+    const getMagnetInfoForId = (id) => {
+        if (id >= 101 && id <= 199) {
+            return groupedMagnetInfo.id1;
+        } else if ((id >= 201 && id <= 299) || id === 999) {
+            return groupedMagnetInfo.id2;
+        } else if (id >= 301 && id <= 399) {
+            return groupedMagnetInfo.id3;
+        } else if (id >= 401 && id <= 499) {
+            return groupedMagnetInfo.id4;
+        } else if (id >= 501 && id <= 599) {
+            return groupedMagnetInfo.id5;
+        }
+        return null;
+    };
+
+    const adjustMagnetInfoPosition = (magnetInfo, lastTwoDigits) => {
+        if (lastTwoDigits >= 1) {
+            const subtractY = Math.floor(lastTwoDigits * 40);
+            return magnetInfo.map((container) => ({
+                ...container,
+                y: container.y - subtractY,
+            }));
+        }
+        return magnetInfo;
     };
 
     const refactorFontSize = (text) => {
@@ -169,7 +240,7 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id }) => {
         height: '40px',
         border: '1px solid #000',
         backgroundColor: blockColor,
-        color: 'white',
+        color: 'white', // text color
         fontSize: refactorFontSize(text),
         display: 'flex',
         alignItems: 'center',
@@ -186,7 +257,7 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id }) => {
     });
 
     return (
-        <Draggable position={position} onDrag={handleDrag}>
+        <Draggable position={position} onStop={handleDrag}>
             <div style={blockStyle}>
                 <p style={{ margin: 0 }}>{formattedText}</p>
             </div>

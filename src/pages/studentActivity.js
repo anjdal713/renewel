@@ -86,26 +86,6 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
     };
   }, []);
 
-  const leftImageProps = useSpring({
-    opacity: scrollPosition > 100 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 100 ? 0 : -100}px)`,
-  });
-
-  const rightImageProps = useSpring({
-    opacity: scrollPosition > 400 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 400 ? 0 : 100}px)`,
-  });
-
-  const leftImageProps2 = useSpring({
-    opacity: scrollPosition > 800 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 1200 ? 0 : -100}px)`,
-  });
-
-  const rightImageProps2 = useSpring({
-    opacity: scrollPosition > 1400 ? 1 : 0,
-    transform: `translateX(${scrollPosition > 1400 ? 0 : 100}px)`,
-  });
-
   return (
     <>
       <div className="head-image">
@@ -140,13 +120,17 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <div style={{ margin: '0 40px 50px 40px' }}>
           <br></br><br></br>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-          <animated.img src={activity1} alt="한성공학경진대회 이미지" style={{ maxWidth: '100%', marginRight: '20px', marginLeft: '20px',...leftImageProps,}} />
-            <div>
+          <div data-aos="fade-right"
+              data-aos-duration="1500">
+          <img src={activity1} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginRight: '20px', marginLeft: '20px'}} />
+          </div>  
+            <div data-aos="fade-left"
+                data-aos-duration="1500">
             <h3>대회명 한성공학경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>윤리적 책임의식과 문제해결의 실용능력을 갖춘 공학도를 양성하기 위하여 각 학과별로 전공 교육과정을 구성하여 운영하고 있으며, 전공이 강한 공학도를 배출하기 위해서 학술 소모임이나 창업 동아리 활동을 장려하고 지원하고 있습니다. 각 학과별로 학술 소모임이나 설계과목 등의 수업시간을 통해, 일년동안 갈고 닦은 전공 관련 논문과 작품 결과물들을 준비하여 전시하기 위해서 개최합니다.</p>
               <p><b>개최시기</b> 매년 9월 </p>
-              <p><b>주관 기관</b> <a href="https://www.hansung.ac.kr/cse/9316/subview.do" target="_blank">한성대 홈페이지 한성공학경진대회</a></p>
+              <p><b>주관 기관</b> <a href="https://www.hansung.ac.kr/cse/9316/subview.do" target="_blank" style={{ textDecoration: 'none' }}>한성대 홈페이지 한성공학경진대회</a></p>
               </div>
             </div>
           </div>
@@ -154,12 +138,16 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <br></br><br></br><br></br>
           <div style={{ margin: '0 40px 50px 40px' }}>
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row-reverse' }}>
-            <animated.img src={activity2} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px',...rightImageProps,}} />
-            <div>
+          <div data-aos="fade-left"
+              data-aos-duration="1500">
+            <img src={activity2} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
+          </div>
+          <div data-aos="fade-right"
+              data-aos-duration="1500">
               <h3>대회명 공개 SW 개발자 대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>SW 서비스 분야의 창의적이고 참신한 아이디어를 발굴하여 타당성 검증, 사업화 지원드을 통해 신 SW 서비스 시장을 창출하는 목적이 있습니다.</p>
-              <p><b>주최 기관</b> <a href="https://www.msit.go.kr/index.do" target="_blank">과학기술정보통신부</a></p>
+              <p><b>주최 기관</b> <a href="https://www.msit.go.kr/index.do" target="_blank" style={{ textDecoration: 'none' }}>과학기술정보통신부</a></p>
               <p><b>참가 신청</b> 매년 5월</p>
               <p><b>수상 실적 학생부분</b></p>
               <p></p> 대상: ToTheMagic팀 (배진식, 김태완, 박성훈), 2014년
@@ -173,14 +161,18 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <br></br><br></br><br></br>
           <div style={{ margin: '0 40px 50px 40px' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
-          <animated.img src={activity3} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px',...leftImageProps2,}} />
-            <div>
+          <div data-aos="fade-right"
+              data-aos-duration="1500">
+          <img src={activity3} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
+          </div> 
+          <div data-aos="fade-left"
+              data-aos-duration="1500">
               <h3>대회명	임베디드 소프트웨어 경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>창의적이고 혁신적인 임베디드 소프트웨어 개발 아이디어 획득 임베디드 소프트웨어와 산업 간의 협업 아이디어 제공, 임베디드 소프트웨어 분야 우수 인력 발굴 및 양성, 임베디드 소프트웨어에 대한 범국민적 인식 제고 및 Global 저변 확대를 목표로 합니다.</p>
               <p><b>주최 기관</b>	산업통상자원부</p>
               <p><b>계획서 접수</b>	매년6월</p>
-              <p><b>홈페이지</b> <a href="https://www.eswcontest.or.kr/main.php" target="_blank">임베디드 소프트웨어 경진대회</a></p>
+              <p><b>홈페이지</b> <a href="https://www.eswcontest.or.kr/main.php" target="_blank" style={{ textDecoration: 'none' }}>임베디드 소프트웨어 경진대회</a></p>
               <p><b>수상 실적</b></p>
               <p>우수상: Casper팀 (최지훈, 심영보, 권영재, 유민석), 2016년</p>
               <p>우수상: HIFLY팀 (김준희, 김지나, 김형민, 최용석), 2017년</p>
@@ -192,14 +184,18 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <br></br><br></br><br></br>
           <div style={{ margin: '0 40px 50px 40px' }}>
           <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'row-reverse' }}>
-            <animated.img src={activity4} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px',...rightImageProps2,}} />
-            <div>
+          <div data-aos="fade-left"
+              data-aos-duration="1500">
+            <img src={activity4} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
+          </div>  
+          <div data-aos="fade-right"
+              data-aos-duration="1500">
               <h3>대회명	ACM 프로그래밍 경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>대학생 3명으로 구성된 각 팀 들은 제한시간동안 얼마나 많은 문제를 풀 수 있는가를 놓고 경쟁하게 됩니다. 1976년부터 시작되어 올해로 41회째를 맞고 있는 이 대회의 각 지역대회에서 우수한 성적을 거둔 팀들은 내년 5월경 미국 래피드시티에서 개최될 세계 대회에 초대되게 됩니다.</p>
               <p><b>주최 기관</b> ACM</p>
               <p><b>등록</b>	매년 8월</p>
-              <p><b>홈페이지</b>	<a href="http://icpckorea.org/" target="_blank">ACM 프로그래밍 경진대회</a></p>
+              <p><b>홈페이지</b>	<a href="http://icpckorea.org/" target="_blank" style={{ textDecoration: 'none' }}>ACM 프로그래밍 경진대회</a></p>
               </div>
             </div>
           </div>

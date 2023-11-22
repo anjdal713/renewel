@@ -3,7 +3,15 @@ import RoadmapBlock, { blocksByColor } from "../components/RoadmapBlock";
 import RoadmapContainer, { containerData } from '../components/RoadmapContainer';
 import RoadmapButton, { ResetButton, CaptureButton, HelpButton } from "../components/RoadmapButton";
 
+
 const RoadmapPage = () => {
+    let [essentialCount, setEssentialCount] = useState(0);
+    let [basisCount, setBasisCount] = useState(0);
+    let [optionCount, setOptionCount] = useState(0);
+    let [essentialCount2, setEssentialCount2] = useState(-1);
+    let [basisCount2, setBasisCount2] = useState(-1);
+    let [optionCount2, setOptionCount2] = useState(-1);
+
 
     const grayBlocks = blocksByColor.gray;
     const initialBlocks = Object.values(blocksByColor).flat();
@@ -50,7 +58,38 @@ const RoadmapPage = () => {
     const [isOpenTrack1, setIsOpenTrack1] = useState(false);
     const [isOpenTrack2, setIsOpenTrack2] = useState(false);
 
+    const handleCountUpdate = (essential, basis, option, block) => {
+        const maxEssential = 5;
+        const maxBasis = 1;
+        const maxOption = 13;
+        const adjustedEssential = Math.min(essential, maxEssential);
+        const adjustedBasis = Math.min(basis, maxBasis);
+        const adjustedOption = Math.min(option, maxOption);
 
+        setEssentialCount(adjustedEssential);
+        setBasisCount(adjustedBasis);
+        setOptionCount(adjustedOption);
+
+        if ((adjustedEssential >= maxEssential) && (block.id >= 201 && block.id <= 299 || block.id === 999)) {
+            essentialCount2 += 1;
+            if (essentialCount2 >= 5) essentialCount2 = 5;
+        }
+
+        if ((adjustedBasis >= maxBasis) && (block.id >= 301 && block.id <= 399)) {
+            basisCount2 += 1;
+            if (basisCount2 >= 1) basisCount2 = 1;
+        }
+
+        if (adjustedOption >= maxOption) {
+            optionCount2 += 1;
+            if (optionCount2 >= 13) optionCount2 = 13;
+        }
+
+        // essentialCount2, basisCount2, optionCount2 업데이트
+        setEssentialCount2(essentialCount2);
+        setBasisCount2(basisCount2);
+        setOptionCount2(optionCount2);
+    };
 
     // 컨테이너에 블록을 배치하는 함수
     const placeBlocksInContainer = (blocks, containerWidth, containerHeight, blockWidth, blockHeight, gapX, gapY) => {
@@ -74,7 +113,7 @@ const RoadmapPage = () => {
                 columnIndex = 0;
             } else {
                 currentX += blockWidth + gapX;
-                currentY -= 42;
+                currentY -= 40;
             }
         }
         return blocksInContainer;
@@ -108,7 +147,6 @@ const RoadmapPage = () => {
             const blocksInContainer = placeBlocksInContainer(blocksForColor, containerWidth, containerHeight, blockWidth, blockHeight, gapX, gapY);
             const currentContainerData = containerData[index];
 
-
             const imageStyle = {
                 position: 'absolute',
                 top: '-60px',
@@ -140,6 +178,7 @@ const RoadmapPage = () => {
                             position={block.position}
                             text={block.text}
                             blockColor={block.blockColor}
+                            onCountUpdate={(essential, basis, option) => handleCountUpdate(essential, basis, option, block)}
                             setPosition={(newPos) => handlePositionChange(block.id, newPos)}
                         />
                     ))}
@@ -150,7 +189,9 @@ const RoadmapPage = () => {
 
     const [blocks, setBlocks] = useState(() =>
         placeBlocksInContainer(initialBlocks, containerWidth, containerHeight, blockWidth, blockHeight, gapX, gapY)
+
     );
+
 
 
     const handlePositionChange = (id, newPosition) => {
@@ -161,12 +202,7 @@ const RoadmapPage = () => {
     };
 
     const resetState = () => {
-        setIsOpenTrack1(false);
-        setIsOpenTrack2(false);
-        const resetBlocks = placeBlocksInContainer(initialBlocks, containerWidth, containerHeight, blockWidth, blockHeight, gapX, gapY);
-        setBlocks([...resetBlocks]);
-
-        console.log('Reset Blocks:', resetBlocks);
+        window.location.reload();
     };
 
 
@@ -179,7 +215,7 @@ const RoadmapPage = () => {
                 {containers}
             </div>
 
-            <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '999' }}>
+            <div style={{ position: 'absolute', top: '10px', right: '10px', zIndex: '2999' }}>
                 <RoadmapButton
                     isOpen={isOpenTrack1}
                     setIsOpen={setIsOpenTrack1}
@@ -204,16 +240,16 @@ const RoadmapPage = () => {
                     </div>
                 </div>
 
-                <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-51' }}>
-                    <MetricsBox text="전공기초: 0 / (3)" />
-                    <MetricsBox text="전공필수: 0 / (15)" />
-                    <MetricsBox text="전공소계(기초, 지정, 선택): 0 / (39)" />
+                <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
+                    <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
+                    <MetricsBox text={`전공필수: ${essentialCount * 3} / (15)`} />
+                    <MetricsBox text={`전공소계(기초,필수,선택): ${optionCount * 3} / (39)`} />
                 </div>
 
-                <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-50' }}>
-                    <MetricsBox text="전공기초: 0 / (3)" />
-                    <MetricsBox text="전공필수: 0 / (15)" />
-                    <MetricsBox text="전공소계(기초, 지정, 선택): 0 / (39)" />
+                <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
+                    <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
+                    <MetricsBox text={`전공필수: ${Math.max(essentialCount2 * 3, 0)} / (15)`} />
+                    <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max(optionCount2 * 3, 0)} / (39)`} />
                 </div>
 
                 <div style={{ position: 'absolute', top: '200px', right: '88px', zIndex: '999' }}>
