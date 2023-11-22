@@ -49,8 +49,8 @@ export const HelpButton = () => {
                         zIndex: 9999,
                     },
                     content: {
-                        width: '400px',
-                        height: '400px',
+                        width: '600px',
+                        height: '600px',
                         border: 'none',
                         backgroundColor: 'white',
                         display: 'flex',
@@ -158,7 +158,7 @@ export const CaptureButton = () => {
 };
 
 
-const RoadmapButton = ({ options, buttonText }) => {
+const RoadmapButton = ({ options, buttonText, onOptionSelect }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -169,6 +169,7 @@ const RoadmapButton = ({ options, buttonText }) => {
     const handleOptionSelect = (option) => {
         setSelectedOption(option);
         setIsOpen(false);
+        onOptionSelect(option);
     };
 
     return (

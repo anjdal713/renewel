@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import logo from '../../img/HSU-logo.png';
 import logo2 from '../../img/HSU-logo2.png';

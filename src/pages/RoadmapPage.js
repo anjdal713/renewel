@@ -4,13 +4,28 @@ import RoadmapContainer, { containerData } from '../components/RoadmapContainer'
 import RoadmapButton, { ResetButton, CaptureButton, HelpButton } from "../components/RoadmapButton";
 
 
-const RoadmapPage = () => {
+const RoadmapPage = ( selectedOption ) => {
+    const [selectedOption1, setSelectedOption1] = useState(null);
+    const [selectedOption2, setSelectedOption2] = useState(null);
+
     let [essentialCount, setEssentialCount] = useState(0);
     let [basisCount, setBasisCount] = useState(0);
     let [optionCount, setOptionCount] = useState(0);
-    let [essentialCount2, setEssentialCount2] = useState(-1);
-    let [basisCount2, setBasisCount2] = useState(-1);
-    let [optionCount2, setOptionCount2] = useState(-1);
+    let [essentialCount2, setEssentialCount2] = useState(0);
+    let [basisCount2, setBasisCount2] = useState(0);
+    let [optionCount2, setOptionCount2] = useState(0);
+    let [essentialCount3, setEssentialCount3] = useState(0);
+    let [optionCount3, setOptionCount3] = useState(0);
+    let [essentialCount4, setEssentialCount4] = useState(0);
+    let [optionCount4, setOptionCount4] = useState(0);
+    let [essentialCount5, setEssentialCount5] = useState(0);
+    let [optionCount5, setOptionCount5] = useState(0);
+    let [optionCount6, setOptionCount6] = useState(0);
+
+    let shouldIncreaseOption6 = false;
+    const cor = -1
+    let shouldIncreaseBasis2 = false;
+
 
 
     const grayBlocks = blocksByColor.gray;
@@ -58,37 +73,46 @@ const RoadmapPage = () => {
     const [isOpenTrack1, setIsOpenTrack1] = useState(false);
     const [isOpenTrack2, setIsOpenTrack2] = useState(false);
 
-    const handleCountUpdate = (essential, basis, option, block) => {
+    const handleCountUpdate = (essential1, essential2, essential3, essential4, basis,
+                                basis2, option1, option2, option3, option4, option5) => {
         const maxEssential = 5;
         const maxBasis = 1;
-        const maxOption = 13;
-        const adjustedEssential = Math.min(essential, maxEssential);
+        const maxOption = 7;
+        const adjustedEssential = Math.min(essential1, maxEssential);
         const adjustedBasis = Math.min(basis, maxBasis);
-        const adjustedOption = Math.min(option, maxOption);
+        let adjustedOption = Math.min(option1, maxOption);
+        let adjustedOption2 = Math.min(option5, maxOption);
+
+        console.log(selectedOption1);
+        console.log(selectedOption2);
 
         setEssentialCount(adjustedEssential);
         setBasisCount(adjustedBasis);
+
+
+        if (adjustedOption2 >= 7) {
+            if (!shouldIncreaseOption6) {
+                shouldIncreaseOption6 = true; // 증가 여부 설정
+                adjustedOption2 = 7; // 7을 초과하는 경우 7로 유지
+                setOptionCount6((prevOption6) => prevOption6);
+            }
+            if (shouldIncreaseOption6) {
+                setOptionCount6((prevOption6) => prevOption6 + 1);
+                shouldIncreaseOption6 = false; // 증가 후 플래그 초기화
+            }
+        }
+
+
         setOptionCount(adjustedOption);
+        setBasisCount2(basis2);
+        setEssentialCount2(essential2);
+        setOptionCount2(option2);
+        setEssentialCount3(essential3);
+        setOptionCount3(option3);
+        setEssentialCount4(essential4);
+        setOptionCount4(option4);
+        setOptionCount5(adjustedOption2);
 
-        if ((adjustedEssential >= maxEssential) && (block.id >= 201 && block.id <= 299 || block.id === 999)) {
-            essentialCount2 += 1;
-            if (essentialCount2 >= 5) essentialCount2 = 5;
-        }
-
-        if ((adjustedBasis >= maxBasis) && (block.id >= 301 && block.id <= 399)) {
-            basisCount2 += 1;
-            if (basisCount2 >= 1) basisCount2 = 1;
-        }
-
-        if (adjustedOption >= maxOption) {
-            optionCount2 += 1;
-            if (optionCount2 >= 13) optionCount2 = 13;
-        }
-
-        // essentialCount2, basisCount2, optionCount2 업데이트
-        setEssentialCount2(essentialCount2);
-        setBasisCount2(basisCount2);
-        setOptionCount2(optionCount2);
     };
 
     // 컨테이너에 블록을 배치하는 함수
@@ -178,7 +202,10 @@ const RoadmapPage = () => {
                             position={block.position}
                             text={block.text}
                             blockColor={block.blockColor}
-                            onCountUpdate={(essential, basis, option) => handleCountUpdate(essential, basis, option, block)}
+                            onCountUpdate={(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5) =>
+                                handleCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                                    basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5)}
                             setPosition={(newPos) => handlePositionChange(block.id, newPos)}
                         />
                     ))}
@@ -221,6 +248,7 @@ const RoadmapPage = () => {
                     setIsOpen={setIsOpenTrack1}
                     options={['모바일소프트웨어', '웹공학', '빅데이터', '디지털콘텐츠&가상현실']}
                     buttonText="제1트랙 선택"
+                    onOptionSelect={(selectedOption) => setSelectedOption1(selectedOption)}
                 />
             </div>
 
@@ -230,6 +258,7 @@ const RoadmapPage = () => {
                     setIsOpen={setIsOpenTrack2}
                     options={['모바일소프트웨어', '웹공학', '빅데이터', '디지털콘텐츠&가상현실']}
                     buttonText="제2트랙 선택"
+                    onOptionSelect={(selectedOption) => setSelectedOption2(selectedOption)}
                 />
 
                 <div style={{ position: 'relative', marginTop: '-170px' }}>
@@ -240,17 +269,69 @@ const RoadmapPage = () => {
                     </div>
                 </div>
 
-                <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
-                    <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
-                    <MetricsBox text={`전공필수: ${essentialCount * 3} / (15)`} />
-                    <MetricsBox text={`전공소계(기초,필수,선택): ${optionCount * 3} / (39)`} />
-                </div>
+                {selectedOption1 === '모바일소프트웨어' && (
+                    <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${(basisCount + optionCount + optionCount5) * 3} / (39)`} />
+                    </div>
+                )}
 
-                <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
-                    <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
-                    <MetricsBox text={`전공필수: ${Math.max(essentialCount2 * 3, 0)} / (15)`} />
-                    <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max(optionCount2 * 3, 0)} / (39)`} />
-                </div>
+                {selectedOption1 === '웹공학' && (
+                    <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount2 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${(basisCount + optionCount2 + optionCount5) * 3} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption1 === '빅데이터' && (
+                    <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount3 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${(basisCount + optionCount3 + optionCount5) * 3} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption1 === '디지털콘텐츠&가상현실' && (
+                    <div style={{ position: 'absolute', top: '-160px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${basisCount * 3} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount4 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${(basisCount + optionCount4 + optionCount5) * 3} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption2 === '모바일소프트웨어' && (
+                    <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max((basisCount2 + optionCount + optionCount6) * 3, 0)} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption2 === '웹공학' && (
+                    <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount2 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max((basisCount2 + optionCount2 + optionCount6) * 3, 0)} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption2 === '빅데이터' && (
+                    <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount3 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max((basisCount2 + optionCount3 + optionCount6) * 3, 0)} / (39)`} />
+                    </div>
+                )}
+
+                {selectedOption2 === '디지털콘텐츠&가상현실' && (
+                    <div style={{ position: 'absolute', top: '45px', right: '5px', zIndex: '-999' }}>
+                        <MetricsBox text={`전공기초: ${Math.max(basisCount2 * 3, 0)} / (3)`} />
+                        <MetricsBox text={`전공필수: ${essentialCount4 * 3} / (15)`} />
+                        <MetricsBox text={`전공소계(기초,필수,선택): ${Math.max((basisCount2 + optionCount4 + optionCount6) * 3, 0)} / (39)`} />
+                    </div>
+                )}
 
                 <div style={{ position: 'absolute', top: '200px', right: '88px', zIndex: '999' }}>
                     <ResetButton onClick={resetState} />

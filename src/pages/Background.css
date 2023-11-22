@@ -20,6 +20,18 @@
     background-attachment: fixed;
     
 }
+.background-container3{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../img/main-background20.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .circle-image {
     width: 200px;
     height: 200px;

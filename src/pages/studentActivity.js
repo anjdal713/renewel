@@ -5,19 +5,10 @@ import activity1 from '../img/activity1.jpg';
 import activity2 from '../img/activity2.jpg';
 import activity3 from '../img/activity3.jpg';
 import activity4 from '../img/activity4.jpg';
-import { useSpring, animated } from 'react-spring';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import './faculty_introduction/Introduction.css'
 import head from '../img/main-background2.jpg';
-
-const PageHeader = styled.div`
-  height: 250px;
-  background-color: #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -125,8 +116,9 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <img src={activity1} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginRight: '20px', marginLeft: '20px'}} />
           </div>  
             <div data-aos="fade-left"
-                data-aos-duration="1500">
-            <h3>대회명 한성공학경진대회</h3><br></br>
+                data-aos-duration="1500"
+                style={{marginLeft: '30px'}}>
+            <h3>한성공학경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>윤리적 책임의식과 문제해결의 실용능력을 갖춘 공학도를 양성하기 위하여 각 학과별로 전공 교육과정을 구성하여 운영하고 있으며, 전공이 강한 공학도를 배출하기 위해서 학술 소모임이나 창업 동아리 활동을 장려하고 지원하고 있습니다. 각 학과별로 학술 소모임이나 설계과목 등의 수업시간을 통해, 일년동안 갈고 닦은 전공 관련 논문과 작품 결과물들을 준비하여 전시하기 위해서 개최합니다.</p>
               <p><b>개최시기</b> 매년 9월 </p>
@@ -143,8 +135,9 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
             <img src={activity2} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
           </div>
           <div data-aos="fade-right"
-              data-aos-duration="1500">
-              <h3>대회명 공개 SW 개발자 대회</h3><br></br>
+              data-aos-duration="1500"
+              style={{marginRight: '30px'}}>
+              <h3>공개 SW 개발자 대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>SW 서비스 분야의 창의적이고 참신한 아이디어를 발굴하여 타당성 검증, 사업화 지원드을 통해 신 SW 서비스 시장을 창출하는 목적이 있습니다.</p>
               <p><b>주최 기관</b> <a href="https://www.msit.go.kr/index.do" target="_blank" style={{ textDecoration: 'none' }}>과학기술정보통신부</a></p>
@@ -166,8 +159,9 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <img src={activity3} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
           </div> 
           <div data-aos="fade-left"
-              data-aos-duration="1500">
-              <h3>대회명	임베디드 소프트웨어 경진대회</h3><br></br>
+              data-aos-duration="1500"
+              style={{marginLeft: '30px'}}>
+              <h3>임베디드 소프트웨어 경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>창의적이고 혁신적인 임베디드 소프트웨어 개발 아이디어 획득 임베디드 소프트웨어와 산업 간의 협업 아이디어 제공, 임베디드 소프트웨어 분야 우수 인력 발굴 및 양성, 임베디드 소프트웨어에 대한 범국민적 인식 제고 및 Global 저변 확대를 목표로 합니다.</p>
               <p><b>주최 기관</b>	산업통상자원부</p>
@@ -189,8 +183,9 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
             <img src={activity4} alt="공개 SW 개발자 대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px'}} />
           </div>  
           <div data-aos="fade-right"
-              data-aos-duration="1500">
-              <h3>대회명	ACM 프로그래밍 경진대회</h3><br></br>
+              data-aos-duration="1500"
+              style={{marginRight: '30px'}}>
+              <h3>ACM 프로그래밍 경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>대학생 3명으로 구성된 각 팀 들은 제한시간동안 얼마나 많은 문제를 풀 수 있는가를 놓고 경쟁하게 됩니다. 1976년부터 시작되어 올해로 41회째를 맞고 있는 이 대회의 각 지역대회에서 우수한 성적을 거둔 팀들은 내년 5월경 미국 래피드시티에서 개최될 세계 대회에 초대되게 됩니다.</p>
               <p><b>주최 기관</b> ACM</p>

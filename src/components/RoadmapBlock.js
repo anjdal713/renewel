@@ -3,9 +3,8 @@ import Draggable from 'react-draggable';
 import { groupedMagnetInfo, magnetInfo } from './RoadmapMagnet';
 
 export const blocksByColor = {
-    // id 구분 - 1xx: 학부공통, 20x: 트랙필수,
+    // id 구분 - 1xx: 학부공통, 2xx: 트랙필수,
     // id 구분 - 3xx: 트랙기초, 4xx: 자율교양, 5xx: IPP, 6xx: UI 표현
-    // 캡스톤디자인 과목의 경우 모든 트랙에 포함되는 필수 과목이므로 id: 999로 예외처리
     // blockColor 구분 - 학부공통: hotpink, 트랙필수: blue, 트랙기초: skyblue, 자율교양: green, IPP: purple
 
     hotpink: [
@@ -64,7 +63,7 @@ export const blocksByColor = {
         {id: 216, text: '디지털콘텐츠\n기획 및 제작', blockColor: 'blue'},
 
         // 캡스톤디자인
-        {id: 999, text: '캡스톤디자인', blockColor: 'blue'},
+        {id: 217, text: '캡스톤디자인', blockColor: 'blue'},
     ],
     skyblue: [
         // id: 3xx 트랙기초
@@ -96,8 +95,16 @@ export const blocksByColor = {
 };
 
 let basisCount = 0;
-let essentialCount = 0;
-let optionCount = 0;
+let basisCount2 = 0;
+let essentialCount1 = 0;
+let optionCount1 = 0;
+let essentialCount2 = 0;
+let optionCount2 = 0;
+let essentialCount3 = 0;
+let optionCount3 = 0;
+let essentialCount4 = 0;
+let optionCount4 = 0;
+let optionCount5 = 0;
 
 const RoadmapBlock = ({ position: initialPosition, text, blockColor, id, onCountUpdate }) => {
 
@@ -145,7 +152,6 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id, onCount
                         if (updatedMagnetInfo.blockCnt > originalBlockCnt) {
                             deltaY = updatedMagnetInfo.blockCnt * 21;
                             magnetInfo[updatedMagnetInfoIndex].y += deltaY;
-                            console.log(deltaY);
                             setPosition({
                                 x: containerX + containerWidth / 2,
                                 y: containerY + containerHeight / 2 + deltaY, // 위치 변경
@@ -158,28 +164,60 @@ const RoadmapBlock = ({ position: initialPosition, text, blockColor, id, onCount
                                 adjustedMagnetInfo[adjustedMagnetInfoIndex].y -= deltaY;
                             }
                         }
-
-                        console.log("magnetInfo가 성공적으로 업데이트되었습니다.", magnetInfo);
-                    } else {
-                        console.log("magnetId를 찾을 수 없습니다.");
                     }
                 }
-
                 // block 종류별로 count 증가
                 switch (true) {
                     case id >= 101 && id <= 199:
-                        optionCount += 1;
-                        onCountUpdate(essentialCount, basisCount, optionCount);
+                        optionCount5 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
                         break;
-                    case (id >= 201 && id <= 299) || id === 999:
-                        essentialCount += 1;
-                        optionCount += 1;
-                        onCountUpdate(essentialCount, basisCount, optionCount);
+                    case id >= 201 && id <= 204:
+                        essentialCount1 += 1;
+                        optionCount1 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
                         break;
-                    case id >= 301 && id <= 399:
+                    case id >= 205 && id <= 208:
+                        essentialCount2 += 1;
+                        optionCount2 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
+                        break;
+                    case id >= 209 && id <= 212:
+                        essentialCount3 += 1;
+                        optionCount3 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
+                        break;
+                    case id >= 213 && id <= 216:
+                        essentialCount4 += 1;
+                        optionCount4 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
+                        break;
+                    case id === 217:
+                        essentialCount1 += 1;
+                        optionCount1 += 1;
+                        essentialCount2 += 1;
+                        optionCount2 += 1;
+                        essentialCount3 += 1;
+                        optionCount3 += 1;
+                        essentialCount4 += 1;
+                        optionCount4 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
+                        break;
+                    case id === 301:
                         basisCount += 1;
-                        optionCount += 1;
-                        onCountUpdate(essentialCount, basisCount, optionCount);
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
+                        break;
+                    case id === 302:
+                        basisCount2 += 1;
+                        onCountUpdate(essentialCount1, essentialCount2, essentialCount3, essentialCount4, basisCount,
+                            basisCount2, optionCount1, optionCount2, optionCount3, optionCount4, optionCount5);
                         break;
                     default:
                         break;

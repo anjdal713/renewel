@@ -1,40 +1,60 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 .card-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 100px; /* Increased gap between cards */
 }
+
 .card {
-  background-color: #fff;
-  padding: 2rem 2.5rem;
-  width: 350px;
-  height:100px;
+  background-color: #282c35; /* Dark background color */
+  color: #61dafb; /* Text color */
+  padding: 2rem;
+  width: 300px; /* Card width */
+  height: 150px; /* Card height */
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin: 3rem;
+  margin: 1.5rem; /* Margin between cards */
+  border-radius: 12px; /* Rounded corners */
   overflow: hidden;
-  transition: width 0.5s;
+  transition: transform 1s, box-shadow 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for a subtle lift */
 }
+
+.card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increased box shadow on hover */
+}
+
 .card.open {
-  width:350px;
-  height:fit-content
+  height: auto; /* Adjusted for variable content height */
+  transform: scale(1.05); /* Scale effect when card is open */
+  box-shadow: 0 30px 60px rgba(252, 247, 247, 0.4); /* Increased box shadow when card is open */
 }
+
 .expandCard-layout {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
+  gap: 50px; /* Increased gap between cards */
   justify-content: center;
-  font-family: 'poppins';
+  font-family: 'Poppins', sans-serif; /* Added a generic sans-serif fallback */
   background: #0F2027;
   background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
   background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
 }
+
 .content-text {
   margin-top: 20px;
-  line-height: 2.1;
+  color: #fff; /* White text color */
+  line-height: 1.8;
 }
