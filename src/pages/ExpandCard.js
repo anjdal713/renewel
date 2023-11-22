@@ -32,7 +32,7 @@ const ExpandCard = ({ title, content }) => {
             stiffness: 100,
           }}
         >
-         <div className="content-text">
+          <div className="content-text">
             <p>{content}</p>
           </div>
         </motion.div>

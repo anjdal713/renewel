@@ -31,14 +31,14 @@ export const BoxContent = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100%; /* 흰색 박스를 부모 Box의 크기에 맞추기 */
+  width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.4); /* 흰색 박스의 색상 및 투명도 설정 */
+  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* 이미지 위에 위치하도록 z-index 설정 */
+  z-index: 2;
   transition: background-color 0.5s ease;
 `;
 
@@ -103,7 +103,7 @@ export const Box = styled.div`
     height: 100%;
     background-color: rgba(255, 255, 255, 0.4);
     transition: background-color 0.5s ease;
-    z-index: 1; /* 이미지 위에 위치하도록 z-index 설정 */
+    z-index: 1;
   }
 
   &:hover::before {

@@ -1,8 +1,5 @@
-// 컴포넌트 파일 (예: MainPage.js)
-
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-//import data from "./App";
 import Home from "../pages/Home/Home";
 import activity1 from '../img/activity1.jpg';
 import activity2 from '../img/activity2.jpg';
@@ -43,7 +40,7 @@ const Button = styled.button`
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  transition: text-decoration 0.3s ease; /* transition 추가: 부드러운 변화 효과를 주기 위해 */
+  transition: text-decoration 0.3s ease;
 
   &:hover {
     text-decoration: underline;
@@ -54,7 +51,7 @@ const Button = styled.button`
 
   &:focus,
   &:active {
-    outline: none; /* 클릭 시 파란 테두리 제거 */
+    outline: none;
     text-decoration: underline;
     text-underline-offset : 10px;
     color:black;
@@ -90,8 +87,8 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
   }, []);
 
   const leftImageProps = useSpring({
-    opacity: scrollPosition > 100 ? 1 : 0, // 스크롤 위치에 따라 조절
-    transform: `translateX(${scrollPosition > 100 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
+    opacity: scrollPosition > 100 ? 1 : 0,
+    transform: `translateX(${scrollPosition > 100 ? 0 : -100}px)`,
   });
 
   const rightImageProps = useSpring({
@@ -100,8 +97,8 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
   });
 
   const leftImageProps2 = useSpring({
-    opacity: scrollPosition > 800 ? 1 : 0, // 스크롤 위치에 따라 조절
-    transform: `translateX(${scrollPosition > 1200 ? 0 : -100}px)`, // 스크롤 위치에 따라 조절
+    opacity: scrollPosition > 800 ? 1 : 0,
+    transform: `translateX(${scrollPosition > 1200 ? 0 : -100}px)`,
   });
 
   const rightImageProps2 = useSpring({
@@ -127,25 +124,15 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
       <div data-aos="fade-up"
           data-aos-duration="1500">
       <ButtonContainer>
-        {/* <Button onClick={() => handleButtonClick("전체")}>전체</Button> */}
         <Button onClick={() => handleButtonClick("캡스톤 디자인")} >캡스톤 디자인</Button>
         <Button onClick={() => handleButtonClick("경진대회")}>경진대회</Button>
         <Button onClick={() => handleButtonClick("프로그래밍 캠프")}>프로그래밍 캠프</Button>
       </ButtonContainer>
       <ContentContainer>
-        {/* {selectedButton === "전체" && (
-          <div>
-            전체 내용을 여기에 표시
-            {data.map((item) => (
-              <div key={item.id}>{item.title}</div>
-            ))}
-          </div>
-        )} */}
         {selectedButton === "캡스톤 디자인" && (
           <div>
             컴퓨터 공학부 커리큘럼을 기초로 프로토타입이 아닌 완성된 작품을 팀별로 한 학기 동안 구현하고 발표하는 과목으로서 협업을 통한 프로젝트 수행 기술을 습득한다. 
             <Home boxData={data} hoveredId={hoveredId}onHover={onHover}/>
-
           </div>
         )}
         {selectedButton === "경진대회" && (
@@ -155,14 +142,12 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
           <animated.img src={activity1} alt="한성공학경진대회 이미지" style={{ maxWidth: '100%', marginRight: '20px', marginLeft: '20px',...leftImageProps,}} />
             <div>
-
             <h3>대회명 한성공학경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>윤리적 책임의식과 문제해결의 실용능력을 갖춘 공학도를 양성하기 위하여 각 학과별로 전공 교육과정을 구성하여 운영하고 있으며, 전공이 강한 공학도를 배출하기 위해서 학술 소모임이나 창업 동아리 활동을 장려하고 지원하고 있습니다. 각 학과별로 학술 소모임이나 설계과목 등의 수업시간을 통해, 일년동안 갈고 닦은 전공 관련 논문과 작품 결과물들을 준비하여 전시하기 위해서 개최합니다.</p>
               <p><b>개최시기</b> 매년 9월 </p>
               <p><b>주관 기관</b> <a href="https://www.hansung.ac.kr/cse/9316/subview.do" target="_blank">한성대 홈페이지 한성공학경진대회</a></p>
               </div>
-
             </div>
           </div>
           </div>
@@ -182,7 +167,6 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
               <p>학생부분 금상: Who Dares팀 (홍성문, 안형우, 유호진, 손다미), 2018년</p>
               <p>학생부분 금상: 황금오리팀 (손지혜, 변민정, 김시훈, 이도연, 박혜진, 이태윤), 2019년</p>
               </div>
-
             </div>
           </div>
           </div>
@@ -191,7 +175,6 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <div style={{ display: 'flex', alignItems: 'center' }}>
           <animated.img src={activity3} alt="한성공학경진대회 이미지" style={{ width: '615px', height: '346px', marginLeft: '20px', marginRight: '20px',borderRadius: '20px',...leftImageProps2,}} />
             <div>
-
               <h3>대회명	임베디드 소프트웨어 경진대회</h3><br></br>
               <div style={{ lineHeight: '1.8' }}>
               <p>창의적이고 혁신적인 임베디드 소프트웨어 개발 아이디어 획득 임베디드 소프트웨어와 산업 간의 협업 아이디어 제공, 임베디드 소프트웨어 분야 우수 인력 발굴 및 양성, 임베디드 소프트웨어에 대한 범국민적 인식 제고 및 Global 저변 확대를 목표로 합니다.</p>
@@ -203,7 +186,6 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
               <p>우수상: HIFLY팀 (김준희, 김지나, 김형민, 최용석), 2017년</p>
               <p>우수상: 황도복숭아팀 (박혜진, 이태윤, 김서율, 김지수), 2018년</p>
               </div>
-
             </div>
           </div>
           </div>
@@ -229,8 +211,8 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
           <div>
             <br></br><br></br>
             <iframe
-              width="560"  // 원하는 너비
-              height="315" // 원하는 높이
+              width="560"
+              height="315"
               src="https://www.youtube.com/embed/VEHmmo8Dqhw"
               title="YouTube video player"
               frameborder="0"
@@ -245,10 +227,6 @@ const StudentActivity = ({ data, hoveredId, onHover }) => {
             <h2>프로그램 내용</h2><br></br>
             <p>C (Level 1 & Level 2), C++ (Level 1 & Level 2), Java, Mini Project Problems</p>
             <br></br><br></br>
-            {/* <h2>2023 동계 프로그래밍 캠프</h2>
-            <p>2023년 1월 9일 (월) ~ 2023년 1월 12일 (목), 오크밸리리조트
-                학생 105명, 튜터 7명, 학부 교수 8명 참석</p> */}
-
           </div>
         )}
       </ContentContainer>

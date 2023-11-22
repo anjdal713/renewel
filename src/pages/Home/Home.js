@@ -1,9 +1,5 @@
-// Home.js
-
 import React from "react";
 import * as S from "./HomeStyles";
-//import capstoneImage from '../../img/2022_capstone.png';
-import { Link } from "react-router-dom";
 
 const data = [
   {

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import px2vw from "./px2vw"; //converts pixels to viewport width
+import px2vw from "./px2vw";
 
 export const Global = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");

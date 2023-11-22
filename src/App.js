@@ -18,13 +18,12 @@ import './App.css';
 
 function App() {
   const [hoveredId, setHoveredId] = useState(null);
-  // 마우스 호버 상태 업데이트 함수
   const handleHover = (id) => {
     setHoveredId(id);
   };
+
   return (
     <>
-    
     <div className="App">
     <Header/>
       <Router>
@@ -38,7 +37,6 @@ function App() {
           <Route exact path='/members' element={<Members />} />
           <Route exact path='/Global' element={<Global />} />
           <Route exact path='/activity' element={<StudentActivity data={data} hoveredId={hoveredId} onHover={handleHover} />} />
-          
         </Routes>
       </Router>
       <Footer/>
@@ -50,10 +48,8 @@ function App() {
         </Routes>
       </Router>
     </div>
-    
     </>
   );
 }
-
 
 export default App;

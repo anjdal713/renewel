@@ -1,47 +1,40 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  .card-list {
+}
+.card-list {
     display: flex;
-    justify-content: space-around; /* Adjust as needed */
+    justify-content: space-around;
     flex-wrap: wrap;
-  }
-  
-  .card {
-    background-color: #fff;
-    padding: 2rem 2.5rem;
-    width: 350px;
-    height:100px;
-    align-items: center;
-
-    cursor: pointer;
-    margin: 3rem; /* Adjust as needed */
-    overflow: hidden; /* Hide overflow content when not expanded */
-    transition: width 0.5s;
-  }
-  
-  .card.open {
-    width:350px; /* Expand width when card is open */
-    height:fit-content
-    
-  }
-  
-  .expandCard-layout {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'poppins';
-    background: #0F2027;
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  }
-  
-  .content-text {
-    margin-top: 20px; /* Adjust as needed */
-    line-height: 2.1;
-  }
+}
+.card {
+  background-color: #fff;
+  padding: 2rem 2.5rem;
+  width: 350px;
+  height:100px;
+  align-items: center;
+  cursor: pointer;
+  margin: 3rem;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.card.open {
+  width:350px;
+  height:fit-content
+}
+.expandCard-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'poppins';
+  background: #0F2027;
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+}
+.content-text {
+  margin-top: 20px;
+  line-height: 2.1;
+}

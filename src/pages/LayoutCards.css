@@ -4,7 +4,6 @@
     width: 100%;
     height: 100%;
     min-height: 100vh;
-
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -13,7 +12,6 @@
     border: 0;
     background-image: url('../img/main-background60.png');
 }
-
 .h1-custom {
     margin-bottom: 50px;
     margin-left:50px;
@@ -36,7 +34,6 @@
     font-size:25px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .p-custom {
     margin-bottom: 20px;
     margin-left:50px;
@@ -44,7 +41,6 @@
     font-size:20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .close-button {
     position: absolute;
     top: 10px;
@@ -54,11 +50,10 @@
     background-color:black;
     background-color: white;
     border: none;
-    border-radius: 50%; /* This will make the button circular */
-    padding: 5px; /* You can adjust the padding to control the size of the button */
-    cursor: pointer; /* Add this to show the button is clickable */
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
 }
-
 .layout-cards {
     width: 80%;
     height: 60%;
@@ -113,28 +108,30 @@
         cursor: pointer;
         overflow: hidden;
         transition: transform 0.3s ease-in-out;
-        
         &:nth-child(1) {
             grid-column: 1 / span 2;
             grid-row: 1;
-            background: url(../assets/ms.png) center/cover; /* Set the background image */        }
+            background: url(../img/ms.png) center/cover;
+        }
         &:nth-child(2) {
             grid-column: 3;
             grid-row: 1;
-            background: url(../assets/we.png) center/cover; /* Set the background image */        }
+            background: url(../img/we.png) center/cover;     
+        }
         &:nth-child(3) {
             grid-column: 1;
             grid-row: 2;
-            background: url(../assets/bd.png) center/cover; /* Set the background image */        }
+            background: url(../img/bd.png) center/cover;
+        }
         &:nth-child(4) {
             grid-column: 2 / span 2;
             grid-row: 2;
-            background: url(../assets/dc.png) center/cover; /* Set the background image */        } 
+            background: url(../img/dc.png) center/cover;
+        } 
     }
     .card:hover {
         transform: scale(1.05) !important;
     }
-    
     .card::after {
         content: "";
         position: absolute;
@@ -145,11 +142,9 @@
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
     }
-    
     .card:hover::after {
         opacity: 0.8;
     }
-    
     .card:hover + .opened-card {
         z-index: 11;
     }
